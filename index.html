@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakshal Shah — Technical Program Manager & Salesforce Architect</title>
+<meta name="description" content="Pakshal Shah — Technical Program Manager & Salesforce Architect delivering AI-powered, cloud-native enterprise transformations. 5+ years across SaaS, hospitality, and financial services.">
+<meta property="og:title" content="Pakshal Shah — TPM & Salesforce Architect">
+<meta property="og:description" content="AI-powered enterprise delivery. 6 certifications. 20–30% efficiency gains across every engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a18;
+    --ink-soft:#55554f;
+    --ink-faint:#8b8b83;
+    --paper:#fbfaf7;
+    --paper-alt:#f3f1ea;
+    --line:#e4e1d7;
+    --accent:#8a6d3b;
+    --accent-deep:#6d5527;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:1060px;margin:0 auto;padding:0 32px}
+
+  /* ---------- Nav ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1060px;margin:0 auto}
+  .brand{font-family:var(--serif);font-size:1.15rem;font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:30px}
+  .nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--accent-deep)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* ---------- Hero ---------- */
+  header{padding:110px 0 90px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.08;letter-spacing:-.01em;max-width:19ch}
+  h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero-sub{margin-top:30px;max-width:58ch;font-size:1.08rem;color:var(--ink-soft)}
+  .hero-cta{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .25s}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{background:var(--accent-deep)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep)}
+
+  /* ---------- Metrics band ---------- */
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+  .metric{padding:44px 32px;border-left:1px solid var(--line);text-align:left}
+  .metric:first-child{border-left:none}
+  .metric .num{font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--ink);line-height:1}
+  .metric .num sup{font-size:1.2rem;color:var(--accent)}
+  .metric .lbl{margin-top:10px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+  @media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(3){border-left:none}}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:22px;margin-bottom:58px}
+  .sec-num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:1rem}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-.01em}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px}
+  .about-grid p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.2em}
+  .about-grid p strong{color:var(--ink);font-weight:600}
+  .fact-list{border-top:1px solid var(--line)}
+  .fact{display:flex;justify-content:space-between;gap:18px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+  .fact dt{color:var(--ink-faint)}
+  .fact dd{color:var(--ink);font-weight:500;text-align:right}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr}}
+
+  /* Experience */
+  .job{display:grid;grid-template-columns:230px 1fr;gap:44px;padding:48px 0;border-top:1px solid var(--line)}
+  .job:first-of-type{border-top:none;padding-top:0}
+  .job-meta .period{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .job-meta .co{font-family:var(--serif);font-size:1.15rem;margin-top:8px}
+  .job-meta .loc{font-size:.85rem;color:var(--ink-faint);margin-top:4px}
+  .job-body h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin-bottom:18px}
+  .job-body ul{list-style:none}
+  .job-body li{position:relative;padding:10px 0 10px 26px;color:var(--ink-soft);border-bottom:1px dashed var(--line);font-size:.97rem}
+  .job-body li:last-child{border-bottom:none}
+  .job-body li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  .job-body li b{color:var(--ink);font-weight:600}
+  @media(max-width:720px){.job{grid-template-columns:1fr;gap:16px}}
+
+  /* Case studies */
+  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .case{background:#fff;border:1px solid var(--line);padding:38px 34px;border-radius:3px;transition:transform .25s, box-shadow .25s}
+  .case:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,26,24,.08)}
+  .case .tag{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .case h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin:14px 0 12px}
+  .case p{color:var(--ink-soft);font-size:.95rem}
+  .case .result{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;font-weight:600;color:var(--accent-deep)}
+  @media(max-width:720px){.cases{grid-template-columns:1fr}}
+
+  /* Skills */
+  .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+  .skill-col h3{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-size:.85rem;padding:7px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .2s}
+  .chip:hover{border-color:var(--accent);color:var(--accent-deep)}
+  @media(max-width:720px){.skill-cols{grid-template-columns:1fr}}
+
+  /* Credentials */
+  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cred{background:#fff;border:1px solid var(--line);padding:26px 24px;border-radius:3px;display:flex;flex-direction:column;gap:6px}
+  .cred .issuer{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+  .cred .name{font-family:var(--serif);font-size:1.05rem}
+  .edu{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .edu .cred .name{font-size:1.12rem}
+  @media(max-width:720px){.creds,.edu{grid-template-columns:1fr}}
+
+  /* Contact */
+  .contact{text-align:center;padding:120px 0}
+  .contact h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:22ch;margin:0 auto}
+  .contact p{margin:24px auto 0;max-width:48ch;color:var(--ink-soft)}
+  .contact .hero-cta{justify-content:center}
+
+  footer{padding:34px 0;text-align:center;font-size:.82rem;color:var(--ink-faint)}
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Pakshal<span>.</span>Shah</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Selected Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <p class="eyebrow reveal">Technical Program Manager · Salesforce Architect</p>
+    <h1 class="reveal">Shipping <em>AI-powered</em> enterprise platforms — from architecture to adoption.</h1>
+    <p class="hero-sub reveal">Five-plus years leading cloud-native transformations across SaaS, hospitality, and financial services — bridging engineering and business stakeholders with a consistent record of 20–30% efficiency gains.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#work">View Selected Work</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/pakshalshah30" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</header>
+
+<div class="metrics wrap" style="padding:0">
+  <div class="metric reveal"><div class="num">1,000<sup>+</sup></div><div class="lbl">Hotel properties on platform</div></div>
+  <div class="metric reveal"><div class="num">30<sup>%</sup></div><div class="lbl">Implementation effort reduced</div></div>
+  <div class="metric reveal"><div class="num">6</div><div class="lbl">Salesforce & AWS certifications</div></div>
+  <div class="metric reveal"><div class="num">95<sup>%</sup></div><div class="lbl">Defect-free deployments</div></div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I operate at the intersection of <strong>program leadership</strong> and <strong>platform architecture</strong>. On one side: roadmaps, stakeholder alignment, Agile delivery across nine-plus global hotel brands including Hilton and IHG. On the other: hands-on Salesforce engineering — Apex, Lightning Web Components, Flows, Einstein AI — built to the Well-Architected Framework.</p>
+        <p>Recently my focus has been <strong>LLM and GenAI integration</strong>: RAG pipelines, agentic workflows, and AI-assisted analytics that cut program review cycles and turn telemetry into decisions. I believe the best transformations are measured — every engagement I've led carries a number next to its name.</p>
+      </div>
+      <dl class="fact-list reveal">
+        <div class="fact"><dt>Currently</dt><dd>TPM @ HotelKey</dd></div>
+        <div class="fact"><dt>Based in</dt><dd>Plano, Texas</dd></div>
+        <div class="fact"><dt>Education</dt><dd>M.S. Business Analytics, UT Dallas</dd></div>
+        <div class="fact"><dt>Focus</dt><dd>AI Delivery · Salesforce · Data</dd></div>
+        <div class="fact"><dt>Industries</dt><dd>SaaS · Hospitality · FinServ</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><h2>Experience</h2></div>
+
+    <div class="job reveal">
+      <div class="job-meta">
+        <div class="period">Aug 2023 — Present</div>
+        <div class="co">HotelKey Inc.</div>
+        <div class="loc">Carrollton, TX</div>
+      </div>
+      <div class="job-body">
+        <h3>Technical Program Manager</h3>
+        <ul>
+          <li>Directed technical delivery for <b>9+ hotel brands</b> (Hilton, IHG), standardizing cloud workflows and reducing implementation effort by <b>30%</b> post-go-live.</li>
+          <li>Architected a Salesforce Sales &amp; Support platform for <b>1,000+ properties</b> with Einstein AI and automated Flows — <b>+20% lead conversion</b>, FCR sustained above 70%.</li>
+          <li>Deployed GenAI root-cause analysis and reporting, cutting program review cycles by <b>20%</b>.</li>
+          <li>Optimized the REST API product suite via usage telemetry and AI-assisted trend analysis, reducing API support tickets by <b>30%</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job reveal">
+      <div class="job-meta">
+        <div class="period">Jan 2023 — May 2023</div>
+        <div class="co">Cyber Group Infinity</div>
+        <div class="loc">Plano, TX</div>
+      </div>
+      <div class="job-body">
+        <h3>Financial Business Analyst</h3>
+        <ul>
+          <li>Delivered GenAI-augmented market insights with Python, Alteryx, and LLM summarization — <b>+8% profit</b> and two strategic initiatives launched.</li>
+          <li>Built AI-assisted forecasting models in Power BI on Snowflake, cutting manual analysis time by <b>35%</b> and surfacing executive insights <b>2× faster</b>.</li>
+          <li>Engineered Snowflake pipelines with automated quality checks — <b>+30% query performance</b>, enabling real-time financial reporting.</li>
+          <li>Developed predictive risk models with Python regression, contributing to a <b>10% reduction</b> in risk exposure.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job reveal">
+      <div class="job-meta">
+        <div class="period">Sep 2019 — Nov 2021</div>
+        <div class="co">Infosys Limited</div>
+        <div class="loc">Bangalore, India</div>
+      </div>
+      <div class="job-body">
+        <h3>Salesforce Business Analyst</h3>
+        <ul>
+          <li>Led Salesforce re-architecture for <b>Daimler AG</b> using Apex and LWC — <b>−20% manual entry</b>, <b>+15% data accuracy</b>.</li>
+          <li>Built scalable LWC and declarative Flows to the Well-Architected Framework, eliminating data duplication by <b>25%</b>.</li>
+          <li>Established CI/CD with GitHub Actions, Bitbucket, and Jenkins — <b>95% defect-free deployments</b>, <b>−30% post-release issues</b>.</li>
+          <li>Led full-cycle UAT, onboarding, and hypercare — <b>90% CSAT</b>, issue resolution time cut <b>40%</b>.</li>
+          <li>Designed real-time Salesforce and Tableau executive dashboards, contributing to a <b>23% revenue increase</b> in Sales &amp; Marketing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03</span><h2>Selected Work</h2></div>
+    <div class="cases">
+      <div class="case reveal">
+        <div class="tag">Platform Architecture</div>
+        <h3>Salesforce at Hotel Scale</h3>
+        <p>Designed and shipped a Sales &amp; Support platform serving 1,000+ hotel properties — Einstein AI recommendations, automated Flows, and a data model built for multi-brand growth.</p>
+        <div class="result">+20% lead conversion · 70%+ FCR sustained</div>
+      </div>
+      <div class="case reveal">
+        <div class="tag">AI Program Delivery</div>
+        <h3>GenAI in the Program Office</h3>
+        <p>Embedded LLM-driven root-cause analysis and automated reporting into program operations across nine hotel brands, turning weekly reviews into same-day decisions.</p>
+        <div class="result">−20% review cycle time · faster executive decisions</div>
+      </div>
+      <div class="case reveal">
+        <div class="tag">Data Engineering</div>
+        <h3>Real-Time Financial Pipelines</h3>
+        <p>Rebuilt Snowflake pipelines with automated data-quality gates and AI-assisted forecasting in Power BI, moving finance from monthly retrospectives to live reporting.</p>
+        <div class="result">+30% query speed · −35% manual analysis time</div>
+      </div>
+      <div class="case reveal">
+        <div class="tag">Enterprise Salesforce</div>
+        <h3>Daimler AG Re-Architecture</h3>
+        <p>Modernized a global automotive Salesforce org with Apex, LWC, and CI/CD automation — from manual data entry toward a well-architected, test-covered platform.</p>
+        <div class="result">95% defect-free releases · 90% CSAT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Capabilities</h2></div>
+    <div class="skill-cols">
+      <div class="skill-col reveal">
+        <h3>AI &amp; Automation</h3>
+        <div class="chips">
+          <span class="chip">Claude Code</span><span class="chip">Einstein AI</span><span class="chip">Gemini</span><span class="chip">Prompt Engineering</span><span class="chip">RAG Pipelines</span><span class="chip">Agentic Workflows</span>
+        </div>
+      </div>
+      <div class="skill-col reveal">
+        <h3>Platform &amp; Cloud</h3>
+        <div class="chips">
+          <span class="chip">Salesforce</span><span class="chip">Apex</span><span class="chip">LWC</span><span class="chip">Flows</span><span class="chip">AWS</span><span class="chip">REST / SOAP APIs</span><span class="chip">CI/CD</span><span class="chip">Docker</span>
+        </div>
+      </div>
+      <div class="skill-col reveal">
+        <h3>Data &amp; Delivery</h3>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Python</span><span class="chip">dbt</span><span class="chip">Alteryx</span><span class="chip">Agile / Scrum</span><span class="chip">Jira</span><span class="chip">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">05</span><h2>Credentials</h2></div>
+    <div class="creds">
+      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Platform Developer II</span></div>
+      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Data Cloud Consultant</span></div>
+      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Business Analyst</span></div>
+      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Administrator</span></div>
+      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Platform Developer I</span></div>
+      <div class="cred reveal"><span class="issuer">Amazon Web Services</span><span class="name">Certified Cloud Practitioner</span></div>
+    </div>
+    <div class="edu">
+      <div class="cred reveal"><span class="issuer">2022 — 2023</span><span class="name">M.S. Business Analytics — University of Texas at Dallas</span></div>
+      <div class="cred reveal"><span class="issuer">2016 — 2019</span><span class="name">B.E. Electronics Engineering — University of Mumbai</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact" style="border-bottom:none">
+  <div class="wrap">
+    <h2 class="reveal">Building something that needs both a roadmap and an architect?</h2>
+    <p class="reveal">I'm open to senior TPM and Salesforce architecture conversations. The fastest way to reach me is email or LinkedIn.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="mailto:pakshal.m.shah@gmail.com">pakshal.m.shah@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/pakshalshah30" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Pakshal Shah · Plano, TX</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
