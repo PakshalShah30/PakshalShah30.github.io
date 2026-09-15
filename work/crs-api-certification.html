@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case study: Certifying CRS integrations before they ship | Pakshal Shah</title>
+<meta name="description" content="How integration testing, Postman collections, partner certification cycles, and SLA tracking across 10+ mission-critical CRS APIs cut API-related support tickets by 30%.">
+<meta property="og:title" content="Case study: Certifying CRS integrations before they ship">
+<meta property="og:image" content="https://pakshalshah.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23163832'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23f3efe4' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../case.css">
+</head>
+<body>
+<nav><div class="nav-in">
+  <a class="brand" href="../"><span class="mark">PS</span><span class="brand-name">Pakshal Shah<small>Senior Business Analyst</small></span></a>
+  <a class="back" href="../#work">← All case studies</a>
+</div></nav>
+
+<header class="case-head"><div class="wrap">
+  <p class="kicker">Case study 02 · HotelKey · APIs &amp; integration</p>
+  <h1>Certifying CRS integrations before they ship.</h1>
+  <p class="dek">A central reservation system talks to everyone: brands, channel partners, contact centers, data products. When an integration breaks, a hotel loses bookings. This is how release-readiness, partner certification, and SLA tracking were made systematic across 10+ mission-critical CRS APIs, and why support tickets fell by a third.</p>
+  <div class="facts">
+    <div class="fact"><small>Role</small><b>Integration analyst &amp; certification lead</b></div>
+    <div class="fact"><small>Surface</small><b>10+ CRS APIs · partner integrations</b></div>
+    <div class="fact"><small>Tools</small><b>Postman · Swagger/OpenAPI · SQL</b></div>
+    <div class="fact"><small>Period</small><b>2024 – present</b></div>
+  </div>
+</div></header>
+
+<article><div class="wrap">
+  <h2><span>01</span>Context</h2>
+  <p>HotelKey's CRS APIs sit in the critical path of every booking. Partners integrate against them, the contact-center booking platform depends on them, and enterprise brands hold them to contractual SLAs. Historically, an integration was "done" when the partner said it worked. Defects surfaced as client-reported discrepancies in production, and a meaningful share of support volume was API-related: mismatched payloads, edge cases nobody had tested, and behavior that differed between staging and production.</p>
+
+  <h2><span>02</span>My role</h2>
+  <p>I owned the analytical side of integration quality: defining what "certified" meant for a partner integration, building and running the test collections that proved it, auditing the data that came out the other side, and tracking integration health against SLAs. I was the person a brand or partner talked to when something didn't match, and the person who found out why.</p>
+
+  <h2><span>03</span>Approach</h2>
+  <div class="diagram">
+    <div class="cap">Certification cycle</div>
+    <div class="flow">
+      <div class="node"><b>API spec</b><small>Swagger / OpenAPI as the contract</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Postman collections</b><small>Per-endpoint tests · edge cases · env files for sandbox / staging</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Certification run</b><small>Pass/fail documented · payload diffs on failures</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>Data audit</b><small>SQL against reservation tables</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>SLA monitoring</b><small>Uptime · latency · error rate</small></div>
+    </div>
+  </div>
+  <ul>
+    <li><b>The spec is the contract.</b> Every test traced to a Swagger/OpenAPI definition, so a partner disagreement became "the spec says X" rather than a negotiation.</li>
+    <li><b>Collections, not clicks.</b> Postman collections per endpoint, with environment files for sandbox and staging, meant a certification cycle was re-runnable in minutes instead of re-created from memory.</li>
+    <li><b>Prove it landed.</b> A passing request isn't a passing integration. SQL audits against reservation and booking tables verified that what the API accepted matched what the database stored, which is where most "it says success but the data's wrong" tickets originate.</li>
+    <li><b>Pass/fail in writing.</b> Certification results were documented per partner, per cycle, so release-readiness was evidence, not a feeling.</li>
+    <li><b>Watch it after go-live.</b> Uptime, response time, and error rates tracked against each integration's SLA, with breaches escalated to engineering with the root-cause already narrowed down.</li>
+  </ul>
+
+  <h2><span>04</span>Outcome</h2>
+  <div class="results">
+    <div class="res"><b>30<i>%</i></b><span>Fewer API-related support tickets</span></div>
+    <div class="res"><b>10<i>+</i></b><span>Mission-critical CRS APIs under certification</span></div>
+    <div class="res"><b>0</b><span>Certifications signed off without a written pass/fail record</span></div>
+  </div>
+  <p>The ticket reduction came from two directions at once: fewer defects reaching production because certification caught them, and faster resolution for the ones that did because the SQL audit and SLA data pointed straight at the cause.</p>
+
+  <div class="pull">"It works on my side" stopped being an acceptable status. "Here's the collection, here's the run, here's the query" replaced it.</div>
+
+  <h2><span>05</span>What I'd do differently</h2>
+  <p>Automate the run itself earlier. The collections were re-runnable, but a human still ran them; wiring them into Newman on a schedule, and generating the certification document from the run output, is the step that turns a good process into an unattended one. That's the <a href="../#projects">CRS Certification Harness</a> project on the ledger, and the <a href="../#projects">SLA Sentinel</a> is the monitoring half of the same idea.</p>
+
+  <div class="tags"><span>REST APIs</span><span>Postman</span><span>Swagger / OpenAPI</span><span>Integration testing</span><span>Partner certification</span><span>SQL data auditing</span><span>SLA management</span><span>CRS / hospitality distribution</span></div>
+</div></article>
+
+<div class="next"><div class="wrap">
+  <div class="cap">Next case study</div>
+  <a href="aws-reservation-data.html">Near-real-time reservation data on AWS<small>Kinesis, Glue, Athena, and validating a DynamoDB DAX rollout against SLAs</small></a>
+  <a href="salesforce-sales-support-platform.html">One Sales &amp; Support platform for a thousand hotels<small>Einstein, Flows, and a data model that made brand onboarding configuration</small></a>
+</div></div>
+
+<footer><div class="wrap">© 2026 Pakshal Shah · <a href="../">pakshalshah.com</a></div></footer>
+</body>
+</html>

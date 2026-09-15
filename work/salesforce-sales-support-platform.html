@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case study: Salesforce Sales & Support platform for 1,000+ hotel properties | Pakshal Shah</title>
+<meta name="description" content="How I architected a Salesforce Sales & Support platform on Einstein AI and automated Flows for a multi-brand hotel platform: +20% lead conversion, First Contact Resolution above 70%.">
+<meta property="og:title" content="Case study: Salesforce Sales & Support platform for 1,000+ hotel properties">
+<meta property="og:image" content="https://pakshalshah.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23163832'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23f3efe4' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../case.css">
+</head>
+<body>
+<nav><div class="nav-in">
+  <a class="brand" href="../"><span class="mark">PS</span><span class="brand-name">Pakshal Shah<small>Senior Business Analyst</small></span></a>
+  <a class="back" href="../#work">← All case studies</a>
+</div></nav>
+
+<header class="case-head"><div class="wrap">
+  <p class="kicker">Case study 01 · HotelKey · Salesforce</p>
+  <h1>One Sales &amp; Support platform for a thousand hotels.</h1>
+  <p class="dek">Nine-plus enterprise brands, each with its own sales process and support expectations, needed to run on a single Salesforce org without any of them feeling like a second-class tenant. This is how the platform was designed, what Einstein and Flows did for it, and what the numbers looked like after.</p>
+  <div class="facts">
+    <div class="fact"><small>Role</small><b>Solution design &amp; delivery lead</b></div>
+    <div class="fact"><small>Scale</small><b>1,000+ properties · 9+ brands</b></div>
+    <div class="fact"><small>Stack</small><b>Sales &amp; Service Cloud · Einstein · Flows</b></div>
+    <div class="fact"><small>Period</small><b>2024 – 2025</b></div>
+  </div>
+</div></header>
+
+<article><div class="wrap">
+  <h2><span>01</span>Context</h2>
+  <p>HotelKey serves a platform of 4,000+ properties across major hospitality brands. The sales and support side of that business, onboarding new properties, managing brand relationships, and resolving property-level issues, had grown up across spreadsheets, email, and partially configured CRM objects. Every brand had a slightly different definition of a "qualified lead" and a "resolved case." Reporting across brands was manual, and support agents were re-asking questions the system should already have known.</p>
+  <p>The mandate was a single Salesforce Sales &amp; Support platform that could hold every brand's process without forking the org per brand, and that would make agents faster rather than slower on day one.</p>
+
+  <h2><span>02</span>My role</h2>
+  <p>I was the analyst and solution designer between the brand stakeholders and the engineering team: I ran discovery with each brand, owned the data model and automation design, wrote the user stories and acceptance criteria, and drove UAT through go-live. On the platform itself I built the declarative layer, Flows, assignment logic, and Einstein configuration, and specified the Apex where declarative tools ran out.</p>
+
+  <h2><span>03</span>Approach</h2>
+  <div class="diagram">
+    <div class="cap">Platform shape</div>
+    <div class="flow">
+      <div class="node"><b>Brand intake</b><small>Web-to-lead · partner referrals · property data feed</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Lead routing Flows</b><small>Brand-aware assignment · SLA timers · dedupe</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Einstein recommendations</b><small>Next-best-action · lead scoring</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>Sales &amp; Support consoles</b><small>Case deflection · knowledge · brand views</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>Executive reporting</b><small>Cross-brand dashboards · FCR · conversion</small></div>
+    </div>
+  </div>
+  <ul>
+    <li><b>One data model, brand as a dimension.</b> Rather than cloning objects per brand, brand became a first-class field driving record types, page layouts, and Flow branches. Adding a brand became configuration, not a project.</li>
+    <li><b>Declarative first.</b> Record-triggered and screen Flows handled routing, SLA timers, and case escalation, with entry criteria tight enough that Flows never fought each other on the same field. Apex was reserved for the two places Flows couldn't reach cleanly.</li>
+    <li><b>Einstein where it changed a decision.</b> Lead scoring and next-best-action recommendations were surfaced only in the moments an agent was actually choosing what to do next, which is why adoption stuck.</li>
+    <li><b>Discovery as a contract.</b> Each brand's "qualified lead" and "resolved case" definitions were documented as acceptance criteria before build, so UAT tested the agreed logic, not opinions.</li>
+  </ul>
+
+  <h2><span>04</span>Outcome</h2>
+  <div class="results">
+    <div class="res"><b>+20<i>%</i></b><span>Lead conversion</span></div>
+    <div class="res"><b>70<i>%+</i></b><span>First Contact Resolution, sustained</span></div>
+    <div class="res"><b>30<i>%</i></b><span>Less implementation effort per brand, post-go-live</span></div>
+  </div>
+  <p>The standardized model is what made the 30% implementation-effort reduction possible: each subsequent brand onboarding reused the same Flows, layouts, and reporting, with brand-specific configuration layered on top.</p>
+
+  <div class="pull">The best compliment came from a support lead who said the system "already knew" things she used to ask for. That's what the data model was for.</div>
+
+  <h2><span>05</span>What I'd do differently</h2>
+  <p>Two things. I'd introduce an automation inventory from day one, a living register of every Flow and trigger by object and event, because the conflict risk grows silently as brands are added; that gap is exactly what <a href="../#projects">Trowel</a> now exists to close. And I'd budget more time for Einstein data readiness up front; the recommendations were only as good as the field hygiene underneath them, and cleaning that up mid-build cost a sprint.</p>
+
+  <div class="tags"><span>Salesforce Sales Cloud</span><span>Service Cloud</span><span>Einstein AI</span><span>Flow Builder</span><span>Data modeling</span><span>Requirements &amp; UAT</span><span>Multi-tenant design</span></div>
+</div></article>
+
+<div class="next"><div class="wrap">
+  <div class="cap">Next case study</div>
+  <a href="crs-api-certification.html">Certifying CRS integrations before they ship<small>Postman, release-readiness, and the 30% drop in API support tickets</small></a>
+  <a href="aws-reservation-data.html">Near-real-time reservation data on AWS<small>Kinesis, Glue, Athena, and validating a DynamoDB DAX rollout against SLAs</small></a>
+</div></div>
+
+<footer><div class="wrap">© 2026 Pakshal Shah · <a href="../">pakshalshah.com</a></div></footer>
+</body>
+</html>

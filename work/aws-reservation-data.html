@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case study: Near-real-time reservation data on AWS | Pakshal Shah</title>
+<meta name="description" content="Supporting enterprise reservation data products on AWS Kinesis, Glue, and Athena, validating booking data with Athena and SQL, and performance-validating a DynamoDB Accelerator rollout against SLAs.">
+<meta property="og:title" content="Case study: Near-real-time reservation data on AWS">
+<meta property="og:image" content="https://pakshalshah.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23163832'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23f3efe4' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../case.css">
+</head>
+<body>
+<nav><div class="nav-in">
+  <a class="brand" href="../"><span class="mark">PS</span><span class="brand-name">Pakshal Shah<small>Senior Business Analyst</small></span></a>
+  <a class="back" href="../#work">← All case studies</a>
+</div></nav>
+
+<header class="case-head"><div class="wrap">
+  <p class="kicker">Case study 03 · HotelKey · AWS &amp; data</p>
+  <h1>Near-real-time reservation data, and proving the fast path was actually fast.</h1>
+  <p class="dek">Enterprise brands wanted to see bookings as they happened, not in yesterday's export. That meant a streaming data product on AWS, and a caching layer in front of the booking APIs that had to be validated against real SLAs before anyone trusted it. This is the analyst's view of both.</p>
+  <div class="facts">
+    <div class="fact"><small>Role</small><b>Data validation &amp; performance analyst</b></div>
+    <div class="fact"><small>Stack</small><b>Kinesis · Glue · Athena · DynamoDB DAX</b></div>
+    <div class="fact"><small>Consumers</small><b>Enterprise brands · internal reporting</b></div>
+    <div class="fact"><small>Period</small><b>2024 – 2025</b></div>
+  </div>
+</div></header>
+
+<article><div class="wrap">
+  <h2><span>01</span>Context</h2>
+  <p>Two things were true at once. Brands needed near-real-time booking visibility, which the batch reporting model couldn't give them. And booking API latency mattered to contact-center response times, which are contractual. The engineering answer was a streaming reservation data product on AWS (Kinesis for ingestion, Glue for transformation, Athena for query) and a DynamoDB Accelerator (DAX) deployment to cut read latency on the booking path. Both needed someone to prove, with data, that they did what they claimed.</p>
+
+  <h2><span>02</span>My role</h2>
+  <p>I supported delivery of the data product from the requirements and validation side: defining what brands needed to see, mapping reservation fields from source to the queryable layer, and writing the Athena and SQL queries that verified the stream was complete and correct. On the DAX rollout I contributed to performance validation, defining the test scenarios, comparing latency before and after against the SLA targets, and documenting the results for sign-off.</p>
+
+  <h2><span>03</span>Approach</h2>
+  <div class="diagram">
+    <div class="cap">Reservation data path</div>
+    <div class="flow">
+      <div class="node"><b>Booking events</b><small>CRS · contact-center platform</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Kinesis</b><small>Streaming ingestion</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Glue</b><small>Transform · schema · partitions</small></div>
+      <div class="arrow">→</div>
+      <div class="node hi"><b>Athena</b><small>Query layer · validation queries</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>Brand reporting</b><small>Near-real-time booking visibility</small></div>
+    </div>
+  </div>
+  <ul>
+    <li><b>Map before you stream.</b> A field-level mapping from reservation source to the Athena schema was the reference for every validation query and every "why doesn't this number match" conversation.</li>
+    <li><b>Validate completeness, not just presence.</b> Athena queries reconciled event counts and key totals against the source system by time window, so a silently dropped partition surfaced as a number, not a complaint.</li>
+    <li><b>Test the cache like a client.</b> DAX validation scenarios mirrored real booking-path calls (lookups, availability reads, repeat reads), measured p50/p95 latency before and after, and compared them to the SLA thresholds brands actually hold HotelKey to.</li>
+    <li><b>Write it down for sign-off.</b> Results went into a validation record with the scenarios, the numbers, and the pass/fail against SLA, which is what let the rollout proceed with confidence rather than optimism.</li>
+  </ul>
+
+  <h2><span>04</span>Outcome</h2>
+  <div class="results">
+    <div class="res"><b>Near<i>-RT</i></b><span>Booking visibility for enterprise brands</span></div>
+    <div class="res"><b>SLA<i>✓</i></b><span>DAX rollout validated against contractual latency targets</span></div>
+    <div class="res"><b>1</b><span>Source of truth for reservation field mapping</span></div>
+  </div>
+  <p>The data product gave brands the live view they'd asked for, and the validation layer meant that when a number looked wrong, there was a query that said why within minutes. The DAX validation record is what turned "faster" into an evidence-backed claim.</p>
+
+  <div class="pull">Streaming data is easy to build and hard to trust. The queries that reconcile it are the product.</div>
+
+  <h2><span>05</span>What I'd do differently</h2>
+  <p>Package the validation queries as a scheduled job with alerting from the start, rather than running them on demand. Reconciliation that only happens when someone remembers is reconciliation that eventually stops happening. The pattern, mapping spec in, validation SQL out, is what the <a href="../#projects">Data Mapper</a> project generalizes.</p>
+
+  <div class="tags"><span>AWS Kinesis</span><span>AWS Glue</span><span>Amazon Athena</span><span>DynamoDB DAX</span><span>Data mapping</span><span>SQL validation</span><span>Performance testing</span><span>SLA compliance</span></div>
+</div></article>
+
+<div class="next"><div class="wrap">
+  <div class="cap">Next case study</div>
+  <a href="salesforce-sales-support-platform.html">One Sales &amp; Support platform for a thousand hotels<small>Einstein, Flows, and a data model that made brand onboarding configuration</small></a>
+  <a href="crs-api-certification.html">Certifying CRS integrations before they ship<small>Postman, release-readiness, and the 30% drop in API support tickets</small></a>
+</div></div>
+
+<footer><div class="wrap">© 2026 Pakshal Shah · <a href="../">pakshalshah.com</a></div></footer>
+</body>
+</html>
