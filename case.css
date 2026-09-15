@@ -1,7 +1,7 @@
 /* Shared stylesheet for case-study pages — matches index.html palette and type */
 :root{
-  --ink:#1b2033;--ink-2:#4b5063;--ink-3:#8a8f9e;
-  --paper:#faf7f0;--paper-2:#f1ecdf;--rule:#d8d2c4;
+  --ink:#1b2033;--ink-2:#3d4257;--ink-3:#646a7c;
+  --paper:#faf7f0;--paper-2:#f1ecdf;--rule:#cdc5b3;
   --green:#1f2a44;--green-2:#2b3a5e;--brass:#d9a441;
   --serif:'Fraunces',Georgia,'Times New Roman',serif;
   --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
