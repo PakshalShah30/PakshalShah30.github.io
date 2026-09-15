@@ -3,342 +3,708 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pakshal Shah — Technical Program Manager & Salesforce Architect</title>
-<meta name="description" content="Pakshal Shah — Technical Program Manager & Salesforce Architect delivering AI-powered, cloud-native enterprise transformations. 5+ years across SaaS, hospitality, and financial services.">
-<meta property="og:title" content="Pakshal Shah — TPM & Salesforce Architect">
-<meta property="og:description" content="AI-powered enterprise delivery. 6 certifications. 20–30% efficiency gains across every engagement.">
+<title>Pakshal Shah — Technical Solution Architect · Salesforce · AI</title>
+<meta name="description" content="Pakshal Shah is a Technical Solution Architect in Plano, TX. Salesforce platform engineering, API integration, and applied AI for enterprise SaaS — 6x certified, 5+ years across hospitality and financial services.">
+<meta property="og:title" content="Pakshal Shah — Technical Solution Architect">
+<meta property="og:description" content="Salesforce · APIs · Applied AI. Building Trowel for Salesforce and eleven other things.">
+<meta property="og:url" content="https://pakshalshah.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://pakshalshah.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23163832'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='600' fill='%23f3efe4' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Pakshal Shah","jobTitle":"Technical Solution Architect","url":"https://pakshalshah.com","email":"mailto:pakshal.m.shah@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Plano","addressRegion":"TX","addressCountry":"US"},"sameAs":["https://linkedin.com/in/pakshalshah30","https://github.com/PakshalShah30"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"The University of Texas at Dallas"},{"@type":"CollegeOrUniversity","name":"University of Mumbai"}],"knowsAbout":["Salesforce","Apex","Lightning Web Components","REST APIs","Generative AI","Snowflake","Power BI"]}
+</script>
 <style>
   :root{
-    --ink:#1a1a18;
-    --ink-soft:#55554f;
-    --ink-faint:#8b8b83;
-    --paper:#fbfaf7;
-    --paper-alt:#f3f1ea;
-    --line:#e4e1d7;
-    --accent:#8a6d3b;
-    --accent-deep:#6d5527;
-    --serif:'Fraunces', Georgia, serif;
-    --sans:'Inter', -apple-system, sans-serif;
+    --ink:#161a19;
+    --ink-2:#4a524f;
+    --ink-3:#8a918d;
+    --paper:#f6f3ea;
+    --paper-2:#eeeade;
+    --rule:#d9d3c2;
+    --green:#163832;
+    --green-2:#245a50;
+    --brass:#a67c2e;
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --mono:'JetBrains Mono', 'SF Mono', Menlo, monospace;
+    --rail:180px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--accent);color:#fff}
+  body{
+    background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(to right, rgba(22,56,50,.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(22,56,50,.035) 1px, transparent 1px);
+    background-size:48px 48px;
+  }
+  ::selection{background:var(--green);color:var(--paper)}
+  a{color:inherit}
 
-  .wrap{max-width:1060px;margin:0 auto;padding:0 32px}
+  /* ---------- Layout: two-column editorial grid ---------- */
+  .page{max-width:1180px;margin:0 auto;padding:0 40px}
+  .row{display:grid;grid-template-columns:var(--rail) 1fr;gap:56px;align-items:start}
+  .rail{position:sticky;top:96px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .rail .num{font-family:var(--serif);font-size:3.2rem;font-weight:400;color:var(--rule);line-height:1;display:block;margin-bottom:10px;font-variation-settings:'opsz' 144}
+  .rail .lbl{color:var(--green);font-weight:500}
+  @media(max-width:860px){.row{grid-template-columns:1fr;gap:18px}.rail{position:static}.rail .num{font-size:2rem;display:inline;margin-right:10px}}
 
   /* ---------- Nav ---------- */
-  nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1060px;margin:0 auto}
-  .brand{font-family:var(--serif);font-size:1.15rem;font-weight:600;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
-  .brand span{color:var(--accent)}
-  .nav-links{display:flex;gap:30px}
-  .nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .2s}
-  .nav-links a:hover{color:var(--accent-deep)}
-  @media(max-width:720px){.nav-links{display:none}}
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,243,234,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .nav-in{max-width:1180px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .mark{width:34px;height:34px;border-radius:7px;background:var(--green);color:var(--paper);font-family:var(--serif);font-weight:600;font-size:.95rem;display:grid;place-items:center;letter-spacing:.02em}
+  .brand-name{font-family:var(--serif);font-size:1.12rem;font-weight:500;color:var(--ink)}
+  .brand-name small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-top:1px}
+  .links{display:flex;gap:26px;align-items:center}
+  .links a{font-size:.8rem;font-weight:500;letter-spacing:.04em;color:var(--ink-2);text-decoration:none;position:relative;padding-bottom:2px}
+  .links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--brass);transition:width .25s}
+  .links a:hover::after{width:100%}
+  .links .cta{border:1px solid var(--green);color:var(--green);padding:7px 14px;border-radius:4px}
+  .links .cta::after{display:none}
+  .links .cta:hover{background:var(--green);color:var(--paper)}
+  @media(max-width:860px){.links a:not(.cta){display:none}}
 
   /* ---------- Hero ---------- */
-  header{padding:110px 0 90px;border-bottom:1px solid var(--line)}
-  .eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
-  h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.08;letter-spacing:-.01em;max-width:19ch}
-  h1 em{font-style:italic;color:var(--accent-deep)}
-  .hero-sub{margin-top:30px;max-width:58ch;font-size:1.08rem;color:var(--ink-soft)}
-  .hero-cta{margin-top:42px;display:flex;gap:16px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:13px 28px;font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .25s}
-  .btn-primary{background:var(--ink);color:var(--paper)}
-  .btn-primary:hover{background:var(--accent-deep)}
-  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep)}
+  header{padding:96px 0 72px;border-bottom:1px solid var(--rule)}
+  .hero{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:end}
+  .kicker{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:28px;height:1px;background:var(--brass)}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.5rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.015em;font-variation-settings:'opsz' 144;max-width:16ch}
+  h1 .u{position:relative;white-space:nowrap}
+  h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C 40 2, 80 11, 120 6 S 180 3, 198 7' fill='none' stroke='%23a67c2e' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;background-size:100% 100%;z-index:-1;opacity:.85}
+  .lede{margin-top:28px;font-size:1.1rem;color:var(--ink-2);max-width:56ch;line-height:1.65}
+  .hero-actions{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:4px;font-size:.84rem;font-weight:600;letter-spacing:.03em;text-decoration:none;transition:all .2s;border:1px solid transparent}
+  .btn-solid{background:var(--green);color:var(--paper)}
+  .btn-solid:hover{background:var(--green-2)}
+  .btn-line{border-color:var(--rule);color:var(--ink)}
+  .btn-line:hover{border-color:var(--green);color:var(--green)}
 
-  /* ---------- Metrics band ---------- */
-  .metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
-  .metric{padding:44px 32px;border-left:1px solid var(--line);text-align:left}
-  .metric:first-child{border-left:none}
-  .metric .num{font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--ink);line-height:1}
-  .metric .num sup{font-size:1.2rem;color:var(--accent)}
-  .metric .lbl{margin-top:10px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
-  @media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}.metric:nth-child(3){border-left:none}}
+  .card-id{border:1px solid var(--rule);background:#fbf9f3;border-radius:6px;padding:22px 22px 18px;font-size:.86rem;position:relative}
+  .card-id::before{content:"";position:absolute;inset:6px;border:1px solid var(--rule);border-radius:3px;pointer-events:none}
+  .card-id dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px}
+  .card-id dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+  .card-id dd{color:var(--ink);font-weight:500}
+  .card-id .stamp{position:absolute;top:-10px;right:16px;background:var(--brass);color:#fff;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px}
+  @media(max-width:860px){.hero{grid-template-columns:1fr}}
+
+  /* ---------- Stats strip ---------- */
+  .strip{border-bottom:1px solid var(--rule)}
+  .strip .page{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:30px 0;border-left:1px solid var(--rule);padding-left:24px}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat b{font-family:var(--serif);font-weight:500;font-size:2.2rem;display:block;line-height:1;font-variation-settings:'opsz' 144}
+  .stat b i{font-style:normal;color:var(--brass);font-size:1.2rem}
+  .stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:8px}
+  @media(max-width:860px){.strip .page{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:none;padding-left:0}}
 
   /* ---------- Sections ---------- */
-  section{padding:96px 0;border-bottom:1px solid var(--line)}
-  .sec-head{display:flex;align-items:baseline;gap:22px;margin-bottom:58px}
-  .sec-num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:1rem}
-  h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-.01em}
+  section{padding:88px 0;border-bottom:1px solid var(--rule)}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.01em;margin-bottom:28px;font-variation-settings:'opsz' 144}
+  .prose p{color:var(--ink-2);font-size:1.04rem;margin-bottom:1.1em;max-width:64ch}
+  .prose p strong{color:var(--ink);font-weight:600}
+  .pull{border-left:2px solid var(--brass);padding:6px 0 6px 20px;margin:26px 0;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink);max-width:52ch}
 
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px}
-  .about-grid p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.2em}
-  .about-grid p strong{color:var(--ink);font-weight:600}
-  .fact-list{border-top:1px solid var(--line)}
-  .fact{display:flex;justify-content:space-between;gap:18px;padding:15px 0;border-bottom:1px solid var(--line);font-size:.92rem}
-  .fact dt{color:var(--ink-faint)}
-  .fact dd{color:var(--ink);font-weight:500;text-align:right}
-  @media(max-width:720px){.about-grid{grid-template-columns:1fr}}
+  /* Now block */
+  .now{margin-top:34px;border:1px dashed var(--rule);border-radius:6px;padding:18px 20px;background:rgba(251,249,243,.7);max-width:64ch}
+  .now h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .now h4::before{content:"";width:7px;height:7px;border-radius:50%;background:#2e8b57;box-shadow:0 0 0 3px rgba(46,139,87,.18)}
+  .now p{font-size:.95rem;color:var(--ink-2);margin:0}
 
   /* Experience */
-  .job{display:grid;grid-template-columns:230px 1fr;gap:44px;padding:48px 0;border-top:1px solid var(--line)}
-  .job:first-of-type{border-top:none;padding-top:0}
-  .job-meta .period{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
-  .job-meta .co{font-family:var(--serif);font-size:1.15rem;margin-top:8px}
-  .job-meta .loc{font-size:.85rem;color:var(--ink-faint);margin-top:4px}
-  .job-body h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin-bottom:18px}
-  .job-body ul{list-style:none}
-  .job-body li{position:relative;padding:10px 0 10px 26px;color:var(--ink-soft);border-bottom:1px dashed var(--line);font-size:.97rem}
-  .job-body li:last-child{border-bottom:none}
-  .job-body li::before{content:"—";position:absolute;left:0;color:var(--accent)}
-  .job-body li b{color:var(--ink);font-weight:600}
-  @media(max-width:720px){.job{grid-template-columns:1fr;gap:16px}}
+  .xp{border-top:1px solid var(--rule)}
+  .job{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:34px 0;border-bottom:1px solid var(--rule)}
+  .job .when{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--ink-3);padding-top:6px}
+  .job .when b{display:block;color:var(--green);font-weight:500;margin-bottom:4px}
+  .job h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin-bottom:2px}
+  .job .co{font-size:.9rem;color:var(--ink-3);margin-bottom:14px}
+  .job ul{list-style:none}
+  .job li{position:relative;padding:5px 0 5px 20px;color:var(--ink-2);font-size:.96rem}
+  .job li::before{content:"";position:absolute;left:0;top:14px;width:9px;height:1px;background:var(--brass)}
+  .job li b{color:var(--ink);font-weight:600}
+  @media(max-width:860px){.job{grid-template-columns:1fr;gap:8px}}
 
-  /* Case studies */
-  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .case{background:#fff;border:1px solid var(--line);padding:38px 34px;border-radius:3px;transition:transform .25s, box-shadow .25s}
-  .case:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(26,26,24,.08)}
-  .case .tag{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-  .case h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin:14px 0 12px}
-  .case p{color:var(--ink-soft);font-size:.95rem}
-  .case .result{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;font-weight:600;color:var(--accent-deep)}
-  @media(max-width:720px){.cases{grid-template-columns:1fr}}
+  /* Projects ledger */
+  .ledger-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+  .ledger-head p{color:var(--ink-2);max-width:60ch;font-size:.98rem}
+  .filters{display:flex;gap:6px;flex-wrap:wrap}
+  .filters button{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);border-radius:3px;cursor:pointer;transition:all .18s}
+  .filters button:hover{border-color:var(--green);color:var(--green)}
+  .filters button.on{background:var(--green);border-color:var(--green);color:var(--paper)}
+  .ledger{border-top:2px solid var(--ink)}
+  .lrow{border-bottom:1px solid var(--rule)}
+  .lrow summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1.5fr 120px 1fr 130px;gap:16px;align-items:center;padding:18px 0;transition:background .15s}
+  .lrow summary::-webkit-details-marker{display:none}
+  .lrow summary:hover{background:rgba(251,249,243,.9)}
+  .lrow .i{font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+  .lrow .t{font-family:var(--serif);font-size:1.12rem;font-weight:500;line-height:1.25}
+  .lrow .t small{display:block;font-family:var(--sans);font-size:.82rem;color:var(--ink-3);font-weight:400;margin-top:3px}
+  .lrow .cat{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-weight:500}
+  .lrow .stack{font-size:.82rem;color:var(--ink-2)}
+  .lrow .st{justify-self:end;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:2px;border:1px solid var(--rule);color:var(--ink-3);white-space:nowrap}
+  .lrow .st.soon{border-color:var(--brass);color:var(--brass)}
+  .lrow .st.wip{border-color:#2e8b57;color:#2e8b57}
+  .lrow[open] summary{background:rgba(251,249,243,.9)}
+  .lbody{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:6px 0 26px 60px;font-size:.94rem;color:var(--ink-2)}
+  .lbody h5{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:8px}
+  .lbody p{margin-bottom:12px;max-width:58ch}
+  .lbody .impact{color:var(--ink);font-weight:500}
+  .lbody .skills{display:flex;flex-wrap:wrap;gap:6px}
+  .lbody .skills span{font-family:var(--mono);font-size:.7rem;padding:4px 8px;background:var(--paper-2);border-radius:3px;color:var(--ink-2)}
+  .lbody .gh{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:.84rem;color:var(--ink-3);text-decoration:none;border:1px dashed var(--rule);padding:8px 12px;border-radius:4px;cursor:not-allowed}
+  .lbody .gh b{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:500}
+  .lbody .gh.live{border-style:solid;border-color:var(--green);color:var(--green);cursor:pointer}
+  .lbody .gh.live b{color:var(--green)}
+  .lrow.hide{display:none}
+  @media(max-width:860px){
+    .lrow summary{grid-template-columns:34px 1fr 100px;gap:12px}
+    .lrow .cat,.lrow .stack{display:none}
+    .lbody{grid-template-columns:1fr;padding-left:0}
+  }
 
-  /* Skills */
-  .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
-  .skill-col h3{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .chips{display:flex;flex-wrap:wrap;gap:9px}
-  .chip{font-size:.85rem;padding:7px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft);transition:all .2s}
-  .chip:hover{border-color:var(--accent);color:var(--accent-deep)}
-  @media(max-width:720px){.skill-cols{grid-template-columns:1fr}}
+  /* Capabilities matrix */
+  .matrix{border-top:2px solid var(--ink)}
+  .mrow{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .mrow h4{font-family:var(--serif);font-weight:500;font-size:1.05rem}
+  .mrow h4 small{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-top:4px}
+  .mrow p{color:var(--ink-2);font-size:.95rem}
+  .mrow p b{color:var(--ink);font-weight:500}
+  @media(max-width:860px){.mrow{grid-template-columns:1fr;gap:6px}}
 
   /* Credentials */
-  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .cred{background:#fff;border:1px solid var(--line);padding:26px 24px;border-radius:3px;display:flex;flex-direction:column;gap:6px}
-  .cred .issuer{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
-  .cred .name{font-family:var(--serif);font-size:1.05rem}
-  .edu{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-  .edu .cred .name{font-size:1.12rem}
-  @media(max-width:720px){.creds,.edu{grid-template-columns:1fr}}
+  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cred{border:1px solid var(--rule);background:#fbf9f3;border-radius:5px;padding:18px 18px 16px;position:relative}
+  .cred::after{content:"✓";position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:.72rem;color:var(--green);border:1px solid var(--green);width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
+  .cred small{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}
+  .cred b{font-family:var(--serif);font-weight:500;font-size:1.02rem;display:block;padding-right:28px}
+  .edu{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:860px){.creds,.edu{grid-template-columns:1fr}}
 
   /* Contact */
-  .contact{text-align:center;padding:120px 0}
-  .contact h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:22ch;margin:0 auto}
-  .contact p{margin:24px auto 0;max-width:48ch;color:var(--ink-soft)}
-  .contact .hero-cta{justify-content:center}
+  .contact{padding:110px 0;border-bottom:none}
+  .contact .row{align-items:center}
+  .contact h2{font-size:clamp(2rem,4.2vw,3rem);max-width:20ch;margin-bottom:18px}
+  .contact p{color:var(--ink-2);max-width:48ch;margin-bottom:28px}
+  .contact-list{list-style:none;display:grid;gap:10px}
+  .contact-list li{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:.95rem;border-bottom:1px solid var(--rule);padding:10px 0}
+  .contact-list li span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+  .contact-list li a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass)}
 
-  footer{padding:34px 0;text-align:center;font-size:.82rem;color:var(--ink-faint)}
+  footer{padding:36px 0 48px;border-top:1px solid var(--rule)}
+  .colophon{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--ink-3);line-height:1.8}
+  .colophon a{color:var(--ink-2);text-decoration:none}
 
-  /* Reveal animation */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
-  .reveal.on{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .rv.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+  @media print{nav,.hero-actions,.filters,footer{display:none}body{background:#fff}}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <a class="brand" href="#top">Pakshal<span>.</span>Shah</a>
-    <div class="nav-links">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Pakshal Shah — home">
+      <span class="mark">PS</span>
+      <span class="brand-name">Pakshal Shah<small>Technical Solution Architect</small></span>
+    </a>
+    <div class="links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#work">Selected Work</a>
-      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#capabilities">Capabilities</a>
       <a href="#credentials">Credentials</a>
-      <a href="#contact">Contact</a>
+      <a class="cta" href="#contact">Get in touch</a>
     </div>
   </div>
 </nav>
 
 <header id="top">
-  <div class="wrap">
-    <p class="eyebrow reveal">Technical Program Manager · Salesforce Architect</p>
-    <h1 class="reveal">Shipping <em>AI-powered</em> enterprise platforms — from architecture to adoption.</h1>
-    <p class="hero-sub reveal">Five-plus years leading cloud-native transformations across SaaS, hospitality, and financial services — bridging engineering and business stakeholders with a consistent record of 20–30% efficiency gains.</p>
-    <div class="hero-cta reveal">
-      <a class="btn btn-primary" href="#work">View Selected Work</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/pakshalshah30" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <div class="page hero">
+    <div>
+      <p class="kicker rv">Plano, Texas · Salesforce · APIs · Applied AI</p>
+      <h1 class="rv">I design the systems enterprise teams <span class="u">actually run on</span> — and make them smarter.</h1>
+      <p class="lede rv">Technical Solution Architect with five-plus years across hospitality SaaS, automotive, and financial services. I sit where clients, product, and engineering meet: gathering requirements, architecting Salesforce and API integrations, testing them to certification, and increasingly wiring GenAI into the delivery itself.</p>
+      <div class="hero-actions rv">
+        <a class="btn btn-solid" href="#projects">See what I'm building</a>
+        <a class="btn btn-line" href="Pakshal-Shah-Resume.pdf" download>Download résumé ↓</a>
+      </div>
     </div>
+    <aside class="card-id rv" aria-label="At a glance">
+      <span class="stamp">At a glance</span>
+      <dl>
+        <dt>Role</dt><dd>Technical Solution Architect, HotelKey</dd>
+        <dt>Since</dt><dd>Aug 2023 · promoted from BA</dd>
+        <dt>Certified</dt><dd>5× Salesforce · AWS CCP</dd>
+        <dt>Degree</dt><dd>M.S. Business Analytics, UT Dallas</dd>
+        <dt>Now</dt><dd>Building Trowel for Salesforce</dd>
+        <dt>Open to</dt><dd>Solution Architect · Technical BA · TPM</dd>
+      </dl>
+    </aside>
   </div>
 </header>
 
-<div class="metrics wrap" style="padding:0">
-  <div class="metric reveal"><div class="num">1,000<sup>+</sup></div><div class="lbl">Hotel properties on platform</div></div>
-  <div class="metric reveal"><div class="num">30<sup>%</sup></div><div class="lbl">Implementation effort reduced</div></div>
-  <div class="metric reveal"><div class="num">6</div><div class="lbl">Salesforce & AWS certifications</div></div>
-  <div class="metric reveal"><div class="num">95<sup>%</sup></div><div class="lbl">Defect-free deployments</div></div>
+<div class="strip">
+  <div class="page">
+    <div class="stat rv"><b>1,000<i>+</i></b><span>Hotel properties on platform</span></div>
+    <div class="stat rv"><b>9<i>+</i></b><span>Enterprise brands · Hilton, IHG</span></div>
+    <div class="stat rv"><b>30<i>%</i></b><span>Fewer API support tickets</span></div>
+    <div class="stat rv"><b>95<i>%</i></b><span>Defect-free deployments</span></div>
+  </div>
 </div>
 
 <section id="about">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">01</span><h2>About</h2></div>
-    <div class="about-grid">
-      <div class="reveal">
-        <p>I operate at the intersection of <strong>program leadership</strong> and <strong>platform architecture</strong>. On one side: roadmaps, stakeholder alignment, Agile delivery across nine-plus global hotel brands including Hilton and IHG. On the other: hands-on Salesforce engineering — Apex, Lightning Web Components, Flows, Einstein AI — built to the Well-Architected Framework.</p>
-        <p>Recently my focus has been <strong>LLM and GenAI integration</strong>: RAG pipelines, agentic workflows, and AI-assisted analytics that cut program review cycles and turn telemetry into decisions. I believe the best transformations are measured — every engagement I've led carries a number next to its name.</p>
+  <div class="page row">
+    <div class="rail"><span class="num">01</span><span class="lbl">About</span></div>
+    <div class="prose">
+      <h2 class="rv">Half architect, half translator.</h2>
+      <p class="rv">Most of my work happens in the gap between what a hotel brand's operations team needs and what an engineering team can ship. I run the discovery sessions, write the user stories and data-mapping rules, build the Postman collections that prove an integration works, and walk clients through UAT until the feature matches the logic we agreed on. Then I do it again for the next brand.</p>
+      <p class="rv">On the platform side I'm a <strong>Salesforce specialist</strong> — Apex, Lightning Web Components, Flows, Einstein — with five certifications and a preference for declarative solutions that survive the next admin. On the data side I write the SQL that audits what the APIs actually did.</p>
+      <div class="pull rv">Every engagement I've led carries a number next to its name. If it can't be measured, I haven't finished.</div>
+      <p class="rv">Lately the interesting question is what <strong>agentic AI looks like inside a governed enterprise platform</strong>. My answer-in-progress is Trowel — an AI agent that reads a Salesforce org's metadata and produces the kind of Well-Architected assessment consultancies bill five figures for. The other eleven projects below are the same instinct pointed at APIs, delivery, and hospitality data.</p>
+      <div class="now rv">
+        <h4>Currently</h4>
+        <p>Week 2 of an 8-week build of Trowel for Salesforce · studying for Salesforce AI Specialist · shipping one project a week through September.</p>
       </div>
-      <dl class="fact-list reveal">
-        <div class="fact"><dt>Currently</dt><dd>TPM @ HotelKey</dd></div>
-        <div class="fact"><dt>Based in</dt><dd>Plano, Texas</dd></div>
-        <div class="fact"><dt>Education</dt><dd>M.S. Business Analytics, UT Dallas</dd></div>
-        <div class="fact"><dt>Focus</dt><dd>AI Delivery · Salesforce · Data</dd></div>
-        <div class="fact"><dt>Industries</dt><dd>SaaS · Hospitality · FinServ</dd></div>
-      </dl>
     </div>
   </div>
 </section>
 
 <section id="experience">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">02</span><h2>Experience</h2></div>
-
-    <div class="job reveal">
-      <div class="job-meta">
-        <div class="period">Aug 2023 — Present</div>
-        <div class="co">HotelKey Inc.</div>
-        <div class="loc">Carrollton, TX</div>
+  <div class="page row">
+    <div class="rail"><span class="num">02</span><span class="lbl">Experience</span></div>
+    <div class="xp">
+      <div class="job rv">
+        <div class="when"><b>2023 — Now</b>Aug 2023 – Present</div>
+        <div>
+          <h3>Technical Solution Architect</h3>
+          <div class="co">HotelKey Inc. · Carrollton, TX · promoted from Business Analyst</div>
+          <ul>
+            <li>Primary analytical liaison for <b>9+ enterprise hotel brands</b> (Hilton, IHG) across 1,000+ properties — discovery, data mapping, user stories, functional specs. Implementation effort down <b>30%</b> post-go-live.</li>
+            <li>Architected a Salesforce Sales &amp; Support platform on Einstein AI and automated Flows — <b>+20% lead conversion</b>, First Contact Resolution held above 70%.</li>
+            <li>Integration testing across a 10+ endpoint REST API suite with Postman collections — <b>30% fewer API support tickets</b>.</li>
+            <li>SQL audits of reservation and booking data to resolve client-reported discrepancies; UAT and partner certification cycles against CRS sandbox environments.</li>
+            <li>Tracked integration SLAs (uptime, latency, error rates) and drove root-cause resolution; GenAI reporting cut program review cycles <b>20%</b>.</li>
+          </ul>
+        </div>
       </div>
-      <div class="job-body">
-        <h3>Technical Program Manager</h3>
-        <ul>
-          <li>Directed technical delivery for <b>9+ hotel brands</b> (Hilton, IHG), standardizing cloud workflows and reducing implementation effort by <b>30%</b> post-go-live.</li>
-          <li>Architected a Salesforce Sales &amp; Support platform for <b>1,000+ properties</b> with Einstein AI and automated Flows — <b>+20% lead conversion</b>, FCR sustained above 70%.</li>
-          <li>Deployed GenAI root-cause analysis and reporting, cutting program review cycles by <b>20%</b>.</li>
-          <li>Optimized the REST API product suite via usage telemetry and AI-assisted trend analysis, reducing API support tickets by <b>30%</b>.</li>
-        </ul>
+      <div class="job rv">
+        <div class="when"><b>2023</b>Jan – May 2023</div>
+        <div>
+          <h3>Financial Business Analyst</h3>
+          <div class="co">CG Infinity · Plano, TX</div>
+          <ul>
+            <li>GenAI-augmented market insights with Python, Alteryx, and LLM summarization — <b>+8% profit</b>, two strategic initiatives launched.</li>
+            <li>AI-assisted forecasting in Power BI on Snowflake — manual analysis time down <b>35%</b>, executive insights 2× faster.</li>
+            <li>Snowflake pipelines with automated data-quality checks — <b>+30% query performance</b>; predictive risk models cut exposure <b>10%</b>.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div class="job reveal">
-      <div class="job-meta">
-        <div class="period">Jan 2023 — May 2023</div>
-        <div class="co">Cyber Group Infinity</div>
-        <div class="loc">Plano, TX</div>
-      </div>
-      <div class="job-body">
-        <h3>Financial Business Analyst</h3>
-        <ul>
-          <li>Delivered GenAI-augmented market insights with Python, Alteryx, and LLM summarization — <b>+8% profit</b> and two strategic initiatives launched.</li>
-          <li>Built AI-assisted forecasting models in Power BI on Snowflake, cutting manual analysis time by <b>35%</b> and surfacing executive insights <b>2× faster</b>.</li>
-          <li>Engineered Snowflake pipelines with automated quality checks — <b>+30% query performance</b>, enabling real-time financial reporting.</li>
-          <li>Developed predictive risk models with Python regression, contributing to a <b>10% reduction</b> in risk exposure.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="job reveal">
-      <div class="job-meta">
-        <div class="period">Sep 2019 — Nov 2021</div>
-        <div class="co">Infosys Limited</div>
-        <div class="loc">Bangalore, India</div>
-      </div>
-      <div class="job-body">
-        <h3>Salesforce Business Analyst</h3>
-        <ul>
-          <li>Led Salesforce re-architecture for <b>Daimler AG</b> using Apex and LWC — <b>−20% manual entry</b>, <b>+15% data accuracy</b>.</li>
-          <li>Built scalable LWC and declarative Flows to the Well-Architected Framework, eliminating data duplication by <b>25%</b>.</li>
-          <li>Established CI/CD with GitHub Actions, Bitbucket, and Jenkins — <b>95% defect-free deployments</b>, <b>−30% post-release issues</b>.</li>
-          <li>Led full-cycle UAT, onboarding, and hypercare — <b>90% CSAT</b>, issue resolution time cut <b>40%</b>.</li>
-          <li>Designed real-time Salesforce and Tableau executive dashboards, contributing to a <b>23% revenue increase</b> in Sales &amp; Marketing.</li>
-        </ul>
+      <div class="job rv">
+        <div class="when"><b>2019 — 2021</b>Sep 2019 – Dec 2021</div>
+        <div>
+          <h3>Systems Engineer · Salesforce Business Analyst</h3>
+          <div class="co">Infosys Limited · Bangalore, India · client: Daimler AG</div>
+          <ul>
+            <li>Led Salesforce re-architecture for <b>Daimler AG (Mercedes-Benz)</b> with Apex and LWC — manual entry down 20%, data accuracy up 15%.</li>
+            <li>CI/CD with GitHub Actions, Bitbucket, Jenkins — <b>95% defect-free deployments</b>, post-release issues down 30%.</li>
+            <li>Full-cycle UAT, onboarding, and hypercare — <b>90% CSAT</b>, resolution time cut 40%; executive dashboards tied to a <b>23% revenue increase</b>.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">03</span><h2>Selected Work</h2></div>
-    <div class="cases">
-      <div class="case reveal">
-        <div class="tag">Platform Architecture</div>
-        <h3>Salesforce at Hotel Scale</h3>
-        <p>Designed and shipped a Sales &amp; Support platform serving 1,000+ hotel properties — Einstein AI recommendations, automated Flows, and a data model built for multi-brand growth.</p>
-        <div class="result">+20% lead conversion · 70%+ FCR sustained</div>
+<section id="projects">
+  <div class="page row">
+    <div class="rail"><span class="num">03</span><span class="lbl">Projects</span></div>
+    <div>
+      <div class="ledger-head">
+        <div>
+          <h2 class="rv" style="margin-bottom:10px">Twelve things I'm building.</h2>
+          <p class="rv">A public build log, not a trophy case. Each entry ships to GitHub when it meets its own definition of done — repos flip from <em>coming soon</em> to live as they land. Click a row for scope, stack, and the impact it's designed to have.</p>
+        </div>
+        <div class="filters rv" role="group" aria-label="Filter projects">
+          <button class="on" data-f="all">All</button>
+          <button data-f="ai">AI</button>
+          <button data-f="salesforce">Salesforce</button>
+          <button data-f="api">API</button>
+          <button data-f="product">Product</button>
+        </div>
       </div>
-      <div class="case reveal">
-        <div class="tag">AI Program Delivery</div>
-        <h3>GenAI in the Program Office</h3>
-        <p>Embedded LLM-driven root-cause analysis and automated reporting into program operations across nine hotel brands, turning weekly reviews into same-day decisions.</p>
-        <div class="result">−20% review cycle time · faster executive decisions</div>
-      </div>
-      <div class="case reveal">
-        <div class="tag">Data Engineering</div>
-        <h3>Real-Time Financial Pipelines</h3>
-        <p>Rebuilt Snowflake pipelines with automated data-quality gates and AI-assisted forecasting in Power BI, moving finance from monthly retrospectives to live reporting.</p>
-        <div class="result">+30% query speed · −35% manual analysis time</div>
-      </div>
-      <div class="case reveal">
-        <div class="tag">Enterprise Salesforce</div>
-        <h3>Daimler AG Re-Architecture</h3>
-        <p>Modernized a global automotive Salesforce org with Apex, LWC, and CI/CD automation — from manual data entry toward a well-architected, test-covered platform.</p>
-        <div class="result">95% defect-free releases · 90% CSAT</div>
+
+      <div class="ledger rv">
+
+        <details class="lrow" data-cat="ai salesforce" open>
+          <summary>
+            <span class="i">01</span>
+            <span class="t">Trowel for Salesforce<small>AI agent that audits a Salesforce org and writes the Well-Architected assessment</small></span>
+            <span class="cat">AI · Salesforce</span>
+            <span class="stack">Python · Claude API · sf CLI · networkx · SQLite</span>
+            <span class="st wip">In progress</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Excavates an org's metadata — Flows, Apex, fields, permission sets — into a dependency graph, then an agent with hybrid retrieval (graph traversal + embeddings) finds dead automation, conflicting triggers, and permission sprawl and narrates a prioritized remediation roadmap. Findings are detected deterministically; the LLM explains, never invents.</p>
+              <h5>Impact</h5>
+              <p class="impact">Replaces a $50k+ manual org-health assessment with a reproducible report in minutes, gated by a golden-dataset eval suite in CI.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Agentic AI</span><span>RAG / hybrid retrieval</span><span>Salesforce Metadata API</span><span>Graph analysis</span><span>LLM evals</span><span>Well-Architected</span></div>
+              <a class="gh" href="https://github.com/PakshalShah30/trowel-for-salesforce" target="_blank" rel="noopener"><b>GitHub</b> PakshalShah30/trowel-for-salesforce · README up, code landing weekly</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="salesforce api">
+          <summary>
+            <span class="i">02</span>
+            <span class="t">FlowLint<small>A static analyzer for Salesforce Flow XML — like ESLint, for Flows</small></span>
+            <span class="cat">Salesforce · API</span>
+            <span class="stack">Python · lxml · CLI · GitHub Action</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Parses <code>.flow-meta.xml</code> and flags the things that hurt in production: missing fault paths, hardcoded record IDs, DML inside loops, recursion risk from record-triggered Flows updating their own object, and inactive-but-referenced Flows. Runs locally or as a CI check on every pull request.</p>
+              <h5>Impact</h5>
+              <p class="impact">Catches the top five Flow defects before deployment instead of after a support ticket — the same class of issue that drove 30% of API support volume at scale.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Flow metadata</span><span>Static analysis</span><span>CI/CD</span><span>Python</span><span>Developer tooling</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/flowlint · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="api product">
+          <summary>
+            <span class="i">03</span>
+            <span class="t">CRS Certification Harness<small>Automated partner-certification test cycles for hospitality reservation APIs</small></span>
+            <span class="cat">API · Product</span>
+            <span class="stack">Postman · Newman · Python · HTML reports</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Codifies a CRS partner-certification cycle as a versioned Postman collection with data-driven test cases, runs it against sandbox/staging via Newman, and generates the pass/fail certification document reviewers actually want — with payload diffs for every failure.</p>
+              <h5>Impact</h5>
+              <p class="impact">Turns a multi-day manual certification into a repeatable one-command run with an audit-ready report.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Integration testing</span><span>Postman / Newman</span><span>REST APIs</span><span>CRS / hospitality distribution</span><span>Test documentation</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/crs-certification-harness · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="api product">
+          <summary>
+            <span class="i">04</span>
+            <span class="t">SLA Sentinel<small>Integration uptime, latency, and error-rate monitor with contractual-SLA breach alerts</small></span>
+            <span class="cat">API · Product</span>
+            <span class="stack">Python · FastAPI · SQLite · Chart.js</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Probes a set of REST endpoints on a schedule, stores response time and status, computes rolling uptime and p95 latency against per-integration SLA thresholds, and posts breach alerts to Slack or email. A small dashboard shows the last 30 days per partner.</p>
+              <h5>Impact</h5>
+              <p class="impact">Makes SLA tracking a system instead of a spreadsheet — escalations happen on data, not on the client noticing first.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>SLA management</span><span>Observability</span><span>FastAPI</span><span>Alerting</span><span>Dashboards</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/sla-sentinel · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="ai salesforce">
+          <summary>
+            <span class="i">05</span>
+            <span class="t">Story-to-Flow<small>User story + acceptance criteria in, deployable Flow metadata and Gherkin tests out</small></span>
+            <span class="cat">AI · Salesforce</span>
+            <span class="stack">Claude API · Python · Flow metadata · Gherkin</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>A BA writes a story in plain English; the tool generates a record-triggered Flow definition, a Gherkin acceptance-test file, and a human-review diff before anything is deployed. Schema-forced output keeps the metadata valid; a review step keeps the human in the loop.</p>
+              <h5>Impact</h5>
+              <p class="impact">Compresses the story-to-working-automation loop from days to an afternoon while producing the test artifacts UAT needs anyway.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Requirements engineering</span><span>Prompt engineering</span><span>Structured output</span><span>Flow Builder</span><span>BDD / Gherkin</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/story-to-flow · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="ai product">
+          <summary>
+            <span class="i">06</span>
+            <span class="t">RAID Radar<small>Meeting notes and Jira in, a living Risks / Actions / Issues / Decisions log out</small></span>
+            <span class="cat">AI · Product</span>
+            <span class="stack">Claude API · Python · Jira REST · Markdown</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Ingests meeting transcripts and ticket updates, extracts RAID items with owners and dates, de-duplicates against the existing log, and flags risks that resurface across sprints. Produces the weekly status draft a program manager would otherwise write by hand.</p>
+              <h5>Impact</h5>
+              <p class="impact">Designed to cut program-review prep time by a further 20% on top of what GenAI reporting already delivered at HotelKey.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Program management</span><span>Information extraction</span><span>Jira API</span><span>Agentic workflows</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/raid-radar · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="ai product">
+          <summary>
+            <span class="i">07</span>
+            <span class="t">Property Pulse<small>Cross-property support-ticket clustering and root-cause drafts for multi-brand hotel platforms</small></span>
+            <span class="cat">AI · Product</span>
+            <span class="stack">Python · sentence-transformers · scikit-learn · Claude API</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Embeds and clusters support tickets across properties and brands, separates "one property's configuration error" from "platform-wide defect," and drafts the RCA document with the affected-property list attached. Built on synthetic hospitality ticket data.</p>
+              <h5>Impact</h5>
+              <p class="impact">Surfaces platform defects days earlier by seeing the pattern across 1,000 properties that no single support agent can.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Embeddings</span><span>Clustering</span><span>Root-cause analysis</span><span>Hospitality operations</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/property-pulse · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="ai salesforce">
+          <summary>
+            <span class="i">08</span>
+            <span class="t">Prompt Lab for Einstein<small>An evaluation harness for Salesforce Prompt Builder templates</small></span>
+            <span class="cat">AI · Salesforce</span>
+            <span class="stack">Python · Prompt Builder · LLM-as-judge · pytest</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Versions Prompt Builder templates alongside a golden dataset of inputs and expected outputs, scores each template version with a rubric-driven judge model, and reports regressions before a template is promoted. The eval discipline from Trowel, pointed at Einstein.</p>
+              <h5>Impact</h5>
+              <p class="impact">Gives admins a way to change a production prompt with evidence instead of vibes — the missing piece in most Agentforce rollouts.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Einstein / Agentforce</span><span>LLM evaluation</span><span>Prompt engineering</span><span>Regression testing</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/einstein-prompt-lab · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="api product">
+          <summary>
+            <span class="i">09</span>
+            <span class="t">Data Mapper<small>Schema-to-schema mapping specs with auto-generated SQL validation queries</small></span>
+            <span class="cat">API · Product</span>
+            <span class="stack">Python · SQL · JSON Schema · Markdown</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Takes two system schemas (say, a CRS reservation payload and a CRM object) and a mapping definition, then emits the data-mapping document for stakeholders <em>and</em> the SQL queries that verify the mapped data landed correctly. One source of truth for the BA doc and the audit.</p>
+              <h5>Impact</h5>
+              <p class="impact">Ends the drift between the mapping spec everyone signed and the data that actually arrives.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Data mapping</span><span>SQL auditing</span><span>Integration design</span><span>Documentation automation</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/data-mapper · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="api salesforce">
+          <summary>
+            <span class="i">10</span>
+            <span class="t">Lead Router API<small>A rules-driven lead assignment service that syncs to Salesforce via REST and webhooks</small></span>
+            <span class="cat">API · Salesforce</span>
+            <span class="stack">FastAPI · OAuth 2.0 · Salesforce REST API · PostgreSQL</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Accepts leads from any source, applies configurable routing rules (territory, capacity, round-robin, score thresholds), writes assignments to Salesforce through the REST API with OAuth, and exposes a webhook so downstream systems learn about the assignment in real time. Postman collection and OpenAPI spec included.</p>
+              <h5>Impact</h5>
+              <p class="impact">Demonstrates the full API product lifecycle — design, auth, docs, tests, versioning — on a workflow every sales org has.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>API design</span><span>OAuth 2.0</span><span>Salesforce REST API</span><span>OpenAPI</span><span>Webhooks</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/lead-router-api · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="product">
+          <summary>
+            <span class="i">11</span>
+            <span class="t">Forecast Kit<small>A reproducible Snowflake + dbt + Power BI forecasting pipeline template</small></span>
+            <span class="cat">Product · Data</span>
+            <span class="stack">Snowflake · dbt · Python · Power BI</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Packages the forecasting pattern from my CG Infinity work as a template: dbt models with data-quality tests, a Python forecasting layer, and a Power BI report wired to Snowflake — with a seed dataset so anyone can run it end to end.</p>
+              <h5>Impact</h5>
+              <p class="impact">The version of "35% less manual analysis time" that someone else can clone and stand up in an afternoon.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Snowflake</span><span>dbt</span><span>Power BI</span><span>Forecasting</span><span>Data quality</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/forecast-kit · coming soon</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="lrow" data-cat="ai product">
+          <summary>
+            <span class="i">12</span>
+            <span class="t">Onboarding Playbook Generator<small>Brand requirement docs in, property-onboarding checklists and UAT scripts out</small></span>
+            <span class="cat">AI · Product</span>
+            <span class="stack">Claude API · Python · DOCX generation</span>
+            <span class="st soon">Coming soon</span>
+          </summary>
+          <div class="lbody">
+            <div>
+              <h5>What it does</h5>
+              <p>Reads a hotel brand's integration requirements and produces the onboarding playbook: property-level checklist, configuration steps, UAT scripts with acceptance criteria, and a go-live sign-off sheet — as a formatted Word document the client can actually use.</p>
+              <h5>Impact</h5>
+              <p class="impact">Standardizes the onboarding artifacts behind the 30% implementation-effort reduction so every new brand starts from the same playbook.</p>
+            </div>
+            <div>
+              <h5>Skills</h5>
+              <div class="skills"><span>Client onboarding</span><span>UAT design</span><span>Document generation</span><span>Hospitality SaaS</span></div>
+              <a class="gh" aria-disabled="true"><b>GitHub</b> PakshalShah30/onboarding-playbook · coming soon</a>
+            </div>
+          </div>
+        </details>
+
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">04</span><h2>Capabilities</h2></div>
-    <div class="skill-cols">
-      <div class="skill-col reveal">
-        <h3>AI &amp; Automation</h3>
-        <div class="chips">
-          <span class="chip">Claude Code</span><span class="chip">Einstein AI</span><span class="chip">Gemini</span><span class="chip">Prompt Engineering</span><span class="chip">RAG Pipelines</span><span class="chip">Agentic Workflows</span>
-        </div>
-      </div>
-      <div class="skill-col reveal">
-        <h3>Platform &amp; Cloud</h3>
-        <div class="chips">
-          <span class="chip">Salesforce</span><span class="chip">Apex</span><span class="chip">LWC</span><span class="chip">Flows</span><span class="chip">AWS</span><span class="chip">REST / SOAP APIs</span><span class="chip">CI/CD</span><span class="chip">Docker</span>
-        </div>
-      </div>
-      <div class="skill-col reveal">
-        <h3>Data &amp; Delivery</h3>
-        <div class="chips">
-          <span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Python</span><span class="chip">dbt</span><span class="chip">Alteryx</span><span class="chip">Agile / Scrum</span><span class="chip">Jira</span><span class="chip">Figma</span>
-        </div>
+<section id="capabilities">
+  <div class="page row">
+    <div class="rail"><span class="num">04</span><span class="lbl">Capabilities</span></div>
+    <div>
+      <h2 class="rv">What I bring to a room.</h2>
+      <div class="matrix rv">
+        <div class="mrow"><h4>Salesforce platform<small>5× certified</small></h4><p><b>Apex, Lightning Web Components, Flows, Einstein AI, Data Cloud.</b> Well-Architected by habit — declarative first, code where it earns its place, CI/CD around all of it.</p></div>
+        <div class="mrow"><h4>Integration &amp; APIs<small>REST · SOAP · OAuth</small></h4><p><b>Postman collections, certification cycles, SLA monitoring, payload auditing with SQL.</b> I treat an integration as untested until the client's data has landed and been queried.</p></div>
+        <div class="mrow"><h4>Applied AI<small>LLM · RAG · agents</small></h4><p><b>Claude, Einstein, prompt engineering, hybrid retrieval, LLM-as-judge evals.</b> The interesting part isn't the model — it's the eval gate that makes it safe to ship.</p></div>
+        <div class="mrow"><h4>Analysis &amp; delivery<small>BA · TPM</small></h4><p><b>Discovery, user stories, data mapping, UAT, Agile/Scrum, Jira &amp; Confluence.</b> Client-facing by default; every requirement traceable to a test and a metric.</p></div>
+        <div class="mrow"><h4>Data<small>SQL · Snowflake · BI</small></h4><p><b>SQL, Snowflake, dbt, Power BI, Tableau, Python, Alteryx.</b> Pipelines with quality checks, dashboards leadership actually opens.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="credentials">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">05</span><h2>Credentials</h2></div>
-    <div class="creds">
-      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Platform Developer II</span></div>
-      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Data Cloud Consultant</span></div>
-      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Business Analyst</span></div>
-      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Administrator</span></div>
-      <div class="cred reveal"><span class="issuer">Salesforce</span><span class="name">Platform Developer I</span></div>
-      <div class="cred reveal"><span class="issuer">Amazon Web Services</span><span class="name">Certified Cloud Practitioner</span></div>
-    </div>
-    <div class="edu">
-      <div class="cred reveal"><span class="issuer">2022 — 2023</span><span class="name">M.S. Business Analytics — University of Texas at Dallas</span></div>
-      <div class="cred reveal"><span class="issuer">2016 — 2019</span><span class="name">B.E. Electronics Engineering — University of Mumbai</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact" style="border-bottom:none">
-  <div class="wrap">
-    <h2 class="reveal">Building something that needs both a roadmap and an architect?</h2>
-    <p class="reveal">I'm open to senior TPM and Salesforce architecture conversations. The fastest way to reach me is email or LinkedIn.</p>
-    <div class="hero-cta reveal">
-      <a class="btn btn-primary" href="mailto:pakshal.m.shah@gmail.com">pakshal.m.shah@gmail.com</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/pakshalshah30" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <div class="page row">
+    <div class="rail"><span class="num">05</span><span class="lbl">Credentials</span></div>
+    <div>
+      <h2 class="rv">Verified, not self-declared.</h2>
+      <div class="creds rv">
+        <div class="cred"><small>Salesforce</small><b>Certified Platform Developer II</b></div>
+        <div class="cred"><small>Salesforce</small><b>Certified Data Cloud Consultant</b></div>
+        <div class="cred"><small>Salesforce</small><b>Certified Business Analyst</b></div>
+        <div class="cred"><small>Salesforce</small><b>Certified Administrator</b></div>
+        <div class="cred"><small>Salesforce</small><b>Certified Platform Developer I</b></div>
+        <div class="cred"><small>Amazon Web Services</small><b>Certified Cloud Practitioner</b></div>
+      </div>
+      <div class="edu rv">
+        <div class="cred" style="padding-right:18px"><small>2022 – 2023</small><b style="padding-right:0">M.S. Business Analytics — The University of Texas at Dallas</b></div>
+        <div class="cred"><small>2016 – 2019</small><b style="padding-right:0">B.E. Electronics Engineering — University of Mumbai</b></div>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Pakshal Shah · Plano, TX</footer>
+<section id="contact" class="contact">
+  <div class="page row">
+    <div class="rail"><span class="num">06</span><span class="lbl">Contact</span></div>
+    <div>
+      <h2 class="rv">If you're building something that needs both the spec and the system.</h2>
+      <p class="rv">I read everything that comes in. Fastest replies go to specific questions — a role, a project, an org that needs an honest look.</p>
+      <ul class="contact-list rv">
+        <li><span>Email</span><a href="mailto:pakshal.m.shah@gmail.com">pakshal.m.shah@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://linkedin.com/in/pakshalshah30" target="_blank" rel="noopener">linkedin.com/in/pakshalshah30</a></li>
+        <li><span>GitHub</span><a href="https://github.com/PakshalShah30" target="_blank" rel="noopener">github.com/PakshalShah30</a></li>
+        <li><span>Résumé</span><a href="Pakshal-Shah-Resume.pdf" download>Pakshal-Shah-Resume.pdf</a></li>
+        <li><span>Location</span>Plano, Texas · open to Dallas–Fort Worth and remote</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page colophon">
+    <div>© 2026 Pakshal Shah · Plano, TX<br>Built by hand — no template, no page builder. Set in Fraunces, Inter, and JetBrains Mono.</div>
+    <div>Hosted on GitHub Pages · <a href="https://github.com/PakshalShah30" target="_blank" rel="noopener">source on GitHub</a><br>Last updated July 2026</div>
+  </div>
+</footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Scroll reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Project filters
+  const rows = document.querySelectorAll('.lrow');
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.f;
+      rows.forEach(r => r.classList.toggle('hide', f !== 'all' && !r.dataset.cat.split(' ').includes(f)));
+    });
+  });
+
+  // "Coming soon" links: no navigation, gentle nudge
+  document.querySelectorAll('.gh[aria-disabled="true"]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); a.querySelector('b').textContent = 'Not yet'; setTimeout(() => a.querySelector('b').textContent = 'GitHub', 1200); });
+  });
 </script>
 </body>
 </html>
