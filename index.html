@@ -773,6 +773,25 @@
 </footer>
 
 <script>
+  // Refresh always starts at the top; in-page links scroll without leaving a hash in the URL
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', location.pathname);
+    });
+  });
+  if (location.hash && !document.referrer.includes(location.host)) {
+    const t = document.querySelector(location.hash);
+    if (t) setTimeout(() => t.scrollIntoView({ block: 'start' }), 50);
+  } else if (location.hash) {
+    history.replaceState(null, '', location.pathname);
+    window.scrollTo(0, 0);
+  }
+
   // Last-updated from file modification date (falls back to the hardcoded month)
   try { const d = new Date(document.lastModified); if (!isNaN(d)) document.getElementById('upd').textContent = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }); } catch (e) {}
 
