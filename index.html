@@ -96,15 +96,20 @@
   .card-id .stamp{position:absolute;top:-10px;right:16px;background:#b8862e;color:#fff;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px}
   @media(max-width:860px){.hero{grid-template-columns:1fr}}
 
-  /* ---------- Stats strip ---------- */
-  .strip{border-bottom:1px solid var(--rule)}
-  .strip .page{display:grid;grid-template-columns:repeat(4,1fr)}
-  .stat{padding:30px 0;border-left:1px solid var(--rule);padding-left:24px}
+  /* ---------- Proof strip ---------- */
+  .strip{border-bottom:1px solid var(--rule);background:#fffdf8}
+  .strip .page{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{padding:34px 28px 30px 0;border-left:1px solid var(--rule);padding-left:26px;position:relative}
   .stat:first-child{border-left:none;padding-left:0}
-  .stat b{font-family:var(--serif);font-weight:500;font-size:2.2rem;display:block;line-height:1;font-variation-settings:'opsz' 144}
-  .stat b i{font-style:normal;color:var(--brass);font-size:1.2rem}
-  .stat span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);display:block;margin-top:8px}
-  @media(max-width:860px){.strip .page{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:none;padding-left:0}}
+  .stat::before{content:"";display:block;width:26px;height:3px;background:var(--brass);border-radius:2px;margin-bottom:16px}
+  .stat b{font-family:var(--serif);font-weight:600;font-size:2.6rem;display:block;line-height:1;color:var(--green);font-variation-settings:'opsz' 144;letter-spacing:-.01em}
+  .stat b i{font-style:normal;color:#b8862e;font-size:1.25rem;margin-left:2px}
+  .stat .l{display:block;margin-top:10px;font-size:1rem;font-weight:600;color:var(--ink);line-height:1.3}
+  .stat .h{display:block;margin-top:6px;font-size:.86rem;color:var(--ink-2);line-height:1.45;max-width:26ch}
+  .stat .h a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .stat .h a:hover{color:var(--green);border-color:var(--brass)}
+  @media(max-width:860px){.strip .page{grid-template-columns:repeat(2,1fr)}.stat{padding-right:16px}.stat:nth-child(3){border-left:none;padding-left:0}}
+  @media(max-width:520px){.strip .page{grid-template-columns:1fr}.stat{border-left:none;padding-left:0;border-top:1px solid var(--rule)}.stat:first-child{border-top:none}}
 
   /* ---------- Sections ---------- */
   section{padding:88px 0;border-bottom:1px solid var(--rule)}
@@ -112,6 +117,17 @@
   .prose p{color:var(--ink-2);font-size:1.04rem;margin-bottom:1.1em;max-width:64ch}
   .prose p strong{color:var(--ink);font-weight:600}
   .pull{border-left:2px solid var(--brass);padding:6px 0 6px 20px;margin:26px 0;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink);max-width:52ch}
+
+  .bio{font-size:1.08rem;color:var(--ink-2);max-width:66ch;margin-bottom:34px}
+  .how h3{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#a87a24;font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .how h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:66ch}
+  .how-item{border:1px solid var(--rule);background:#fffdf8;border-radius:6px;padding:18px 18px 16px;position:relative}
+  .how-item .k{font-family:var(--mono);font-size:.66rem;color:#b8862e;letter-spacing:.1em;display:block;margin-bottom:8px}
+  .how-item b{font-family:var(--serif);font-weight:500;font-size:1.12rem;color:var(--ink);display:block;margin-bottom:6px;line-height:1.25}
+  .how-item p{font-size:.92rem;color:var(--ink-2);margin:0}
+  .now a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--brass)}
+  @media(max-width:600px){.how-grid{grid-template-columns:1fr}}
 
   /* Now block */
   .now{margin-top:34px;border:1px dashed var(--rule);border-radius:6px;padding:18px 20px;background:rgba(255,253,248,.85);max-width:64ch}
@@ -281,10 +297,10 @@
 
 <div class="strip">
   <div class="page">
-    <div class="stat rv"><b>4,000<i>+</i></b><span>Properties on the HotelKey platform</span></div>
-    <div class="stat rv"><b>9<i>+</i></b><span>Enterprise brands · Hilton, IHG</span></div>
-    <div class="stat rv"><b>30<i>%</i></b><span>Fewer API support tickets</span></div>
-    <div class="stat rv"><b>95<i>%</i></b><span>Defect-free deployments</span></div>
+    <div class="stat rv"><b>+20<i>%</i></b><span class="l">Lead conversion</span><span class="h">Salesforce Sales &amp; Support platform on Einstein and Flows · <a href="work/salesforce-sales-support-platform.html">case study</a></span></div>
+    <div class="stat rv"><b>30<i>%</i></b><span class="l">Fewer API support tickets</span><span class="h">Certification cycles and SQL audits across 10+ CRS APIs · <a href="work/crs-api-certification.html">case study</a></span></div>
+    <div class="stat rv"><b>30<i>%</i></b><span class="l">Less implementation effort</span><span class="h">Per brand, post go-live, across 9+ enterprise brands including Hilton and IHG</span></div>
+    <div class="stat rv"><b>95<i>%</i></b><span class="l">Defect-free deployments</span><span class="h">CI/CD with automated test coverage on the Daimler AG Salesforce program</span></div>
   </div>
 </div>
 
@@ -293,13 +309,21 @@
     <div class="rail"><span class="num">01</span><span class="lbl">About</span></div>
     <div class="prose">
       <h2 class="rv">Analyst by title, architect by scope.</h2>
-      <p class="rv">Most of my work happens in the gap between what a hotel brand's operations team needs and what an engineering team can ship. I run the discovery sessions, write the user stories and data-mapping rules, build the Postman collections that prove a CRS integration works, and walk clients through UAT and partner certification until the feature matches the logic we agreed on. Then I do it again for the next brand. The title says analyst; the day-to-day is the solution design, the integration decisions, and owning that they hold up in production.</p>
-      <p class="rv">On the platform side I'm a <strong>Salesforce specialist</strong> (Apex, Lightning Web Components, Flows, Einstein) with five certifications and a preference for declarative solutions that survive the next admin. On the cloud side I work in <strong>AWS</strong> daily: reservation data products on Kinesis, Glue, and Athena, and API performance against DynamoDB-backed services. On the data side I write the SQL and Athena queries that audit what the APIs actually did.</p>
-      <div class="pull rv">Every engagement I've led carries a number next to its name. If it can't be measured, I haven't finished.</div>
-      <p class="rv">Lately the interesting question is what <strong>agentic AI looks like inside a governed enterprise platform</strong>. My answer-in-progress is Trowel, an AI agent that reads a Salesforce org's metadata and produces the kind of Well-Architected assessment consultancies bill five figures for. The other eleven projects below are the same instinct pointed at APIs, delivery, and hospitality data.</p>
+      <p class="rv bio">I'm a Senior Business Analyst at HotelKey, where I sit between enterprise hotel brands and the engineers who build for them. I run discovery, write the specs, design the Salesforce and API integrations that follow, and stay on the hook until they're certified and running in production. Five Salesforce certifications, an AWS one, and a habit of writing the SQL that checks whether the system did what we said it would. Before this: financial forecasting at CG Infinity and a Salesforce re-architecture for Daimler AG at Infosys.</p>
+
+      <div class="how rv">
+        <h3>How I work</h3>
+        <div class="how-grid">
+          <div class="how-item"><span class="k">01</span><b>Discovery is a contract.</b><p>Definitions get agreed in writing before build, so UAT tests the logic we signed, not opinions.</p></div>
+          <div class="how-item"><span class="k">02</span><b>Prove it landed.</b><p>A passing API call isn't a passing integration. I query the tables to confirm the data arrived correctly.</p></div>
+          <div class="how-item"><span class="k">03</span><b>Declarative first.</b><p>Flows and configuration before code. Solutions the next admin can read survive the one after that.</p></div>
+          <div class="how-item"><span class="k">04</span><b>Every engagement carries a number.</b><p>If the outcome can't be measured, the work isn't finished. The strip above is the receipt.</p></div>
+        </div>
+      </div>
+
       <div class="now rv">
         <h4>Currently</h4>
-        <p>Week 2 of an 8-week build of Trowel for Salesforce · studying for Salesforce AI Specialist · shipping one project a week through September.</p>
+        <p>Building <a href="#projects">Trowel for Salesforce</a>, an AI agent that audits a Salesforce org · studying for Salesforce AI Specialist · shipping one project a week through September.</p>
       </div>
     </div>
   </div>
