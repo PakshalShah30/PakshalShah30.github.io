@@ -170,6 +170,49 @@
   .next-note{margin-top:14px;font-size:.88rem;color:var(--ink-3);font-style:italic}
   @media(max-width:700px){.next-up li{grid-template-columns:1fr;gap:4px}}
 
+  /* Capabilities matrix */
+  .matrix{border-top:2px solid var(--ink)}
+  .mrow{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .mrow h4{font-family:var(--serif);font-weight:500;font-size:1.05rem}
+  .mrow h4 small{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-top:4px}
+  .mrow p{color:var(--ink-2);font-size:.95rem}
+  .mrow p b{color:var(--ink);font-weight:500}
+  @media(max-width:860px){.mrow{grid-template-columns:1fr;gap:6px}}
+
+  /* Credentials */
+  .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cred{border:1px solid var(--rule);background:#fffdf8;border-radius:5px;padding:18px 18px 16px;position:relative}
+  .cred::after{content:"✓";position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:.72rem;color:var(--green);border:1px solid var(--green);width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
+  .cred small{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:6px}
+  .cred b{font-family:var(--serif);font-weight:500;font-size:1.02rem;display:block;padding-right:28px}
+  .edu{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media(max-width:860px){.creds,.edu{grid-template-columns:1fr}}
+
+  /* Contact */
+  .contact{padding:110px 0;border-bottom:none}
+  .contact .row{align-items:center}
+  .contact h2{font-size:clamp(2rem,4.2vw,3rem);max-width:20ch;margin-bottom:18px}
+  .contact p{color:var(--ink-2);max-width:48ch;margin-bottom:28px}
+  .contact-list{list-style:none;display:grid;gap:10px}
+  .contact-list li{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:.95rem;border-bottom:1px solid var(--rule);padding:10px 0}
+  .contact-list li span{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding-top:4px}
+  .contact-list li a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass)}
+
+  footer{padding:36px 0 48px;border-top:1px solid var(--rule)}
+  .colophon{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink-2);line-height:1.8}
+  .colophon a{color:var(--ink-2);text-decoration:none}
+
+  /* Case studies */
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .case{display:block;text-decoration:none;color:inherit;border:1px solid var(--rule);background:#fffdf8;border-radius:6px;padding:24px 22px 20px;position:relative;transition:border-color .2s,transform .2s}
+  .case:hover{border-color:var(--green);transform:translateY(-2px)}
+  .case .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:12px}
+  .case h3{font-family:var(--serif);font-weight:500;font-size:1.22rem;line-height:1.25;margin-bottom:10px;font-variation-settings:'opsz' 144}
+  .case p{font-size:.92rem;color:var(--ink-2);margin-bottom:16px}
+  .case .m{font-family:var(--mono);font-size:.7rem;color:var(--green);letter-spacing:.04em}
+  .case .go{position:absolute;right:18px;bottom:16px;color:var(--brass);font-size:1.05rem}
+  @media(max-width:860px){.cases{grid-template-columns:1fr}}
+
   /* Credential verification */
   .verify{margin-top:16px;font-size:.88rem;color:var(--ink-3)}
   .verify a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--brass)}
