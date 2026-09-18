@@ -160,6 +160,10 @@
   .prog-list li.now{color:var(--ink);font-weight:500}
   .prog-list li.now::before{background:var(--brass);border-color:var(--brass);box-shadow:0 0 0 3px rgba(217,164,65,.22)}
 
+  .feat-2{margin-top:22px}
+  .feat p+p{margin-top:12px}
+  .feat p em{font-style:italic;color:var(--ink)}
+
   /* Shipped projects */
   .shipped{margin-top:32px;border-top:1px solid var(--rule);padding-top:26px}
   .shipped h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#a87a24;font-weight:500;margin-bottom:16px}
@@ -393,29 +397,54 @@
   <div class="page row">
     <div class="rail"><span class="num">04</span><span class="lbl">Building</span></div>
     <div>
-      <h2 class="rv">Trowel for Salesforce.</h2>
+      <h2 class="rv">What I'm building.</h2>
       <p class="rv lead-p">An AI agent that reads a Salesforce org's metadata and produces the Well-Architected assessment consultancies bill five figures for. It's the answer I'm working out to a question I keep hitting at work: what does agentic AI look like inside a governed enterprise platform?</p>
 
       <div class="feat rv">
         <div class="feat-top">
           <div>
-            <span class="feat-k">Personal project · in progress</span>
-            <h3>What it does</h3>
+            <span class="feat-k">Personal project · Phase 1 of 5</span>
+            <h3>Smart City Travel Planner</h3>
+          </div>
+          <a class="feat-repo" href="https://github.com/PakshalShah30/smart-city-travel-planner" target="_blank" rel="noopener">github.com/PakshalShah30/smart-city-travel-planner ↗</a>
+        </div>
+        <p>Give it a city, a starting point, and a time budget; it returns a routed day plan through real places, using real street-network travel times, that gets you back where you started before the time runs out. Picking a day out is not a sorting problem: every attraction has a location, a visit duration, an opening window, and a value to a particular person, and choosing the best subset <em>and</em> the best order is the Orienteering Problem, which is NP-hard.</p>
+        <p>It is also a deliberate rebuild of my own 2018 university project of the same name. That version specified three itinerary modes, route optimization, ratings, and opening-hours awareness, and shipped a two-column SQL lookup over four rows of placeholder data. This repository is the honest version of that specification, and it tracks the gap on purpose.</p>
+        <div class="feat-stack"><span>Next.js 16</span><span>TypeScript</span><span>Postgres + PostGIS</span><span>Drizzle</span><span>Vitest</span><span>OSM / OSRM</span></div>
+
+        <div class="prog">
+          <div class="prog-head"><span>Build progress</span><b>Phase 1 of 5</b></div>
+          <div class="prog-bar"><i style="width:33%"></i></div>
+          <ul class="prog-list">
+            <li class="done">Phase 0: scaffold, seven-table data model, PostGIS geography columns, CI green</li>
+            <li class="done">Phase 1: greedy insertion solver, geo primitives, opening-hours parsing, Mumbai seed data, planner UI wired to the solver</li>
+            <li class="now">Phase 2: OpenStreetMap ingestion and OSRM travel-time matrices across two cities</li>
+            <li>Phase 3: 2-opt and Or-opt local search, then a constrained solver with time windows, each benchmarked against the last</li>
+            <li>Phases 4 and 5: map surface, accounts, share links, end-to-end tests, launch</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feat feat-2 rv">
+        <div class="feat-top">
+          <div>
+            <span class="feat-k">Personal project · early, paused</span>
+            <h3>Trowel for Salesforce</h3>
           </div>
           <a class="feat-repo" href="https://github.com/PakshalShah30/trowel-for-salesforce" target="_blank" rel="noopener">github.com/PakshalShah30/trowel-for-salesforce ↗</a>
         </div>
-        <p>Excavates an org's Flows, Apex, fields, and permission sets into a dependency graph, then an agent with hybrid retrieval (graph traversal for exact references, embeddings for semantics) finds dead automation, conflicting triggers, and permission sprawl. Findings are detected deterministically by graph queries; the language model explains and prioritizes them, but never discovers them. Every analysis path is gated by a golden-dataset eval suite in CI.</p>
-        <div class="feat-stack"><span>Python</span><span>Claude API</span><span>Salesforce Metadata API</span><span>networkx</span><span>SQLite</span><span>LLM-as-judge evals</span></div>
+        <p>An AI agent that reads a Salesforce org's metadata and produces the kind of Well-Architected assessment consultancies bill five figures for: dead automation, conflicting triggers, permission sprawl, and a prioritized remediation roadmap. The design principle is that findings are detected deterministically by dependency-graph queries, and the language model explains and prioritizes them but never discovers them, because a hallucinated finding would destroy the product's whole premise.</p>
+        <p>Currently early and paused while the travel planner takes priority. The scaffold, retrieval pipeline, and a deliberately seeded test org are in place; the parser, dependency graph, and eval suite are not yet written. Listed here because the architecture argument is worth reading, not because it is finished.</p>
+        <div class="feat-stack"><span>Python</span><span>Claude API</span><span>Salesforce Metadata API</span><span>networkx</span><span>SQLite</span></div>
 
         <div class="prog">
-          <div class="prog-head"><span>Build progress</span><b>Week 2 of 8</b></div>
-          <div class="prog-bar"><i style="width:25%"></i></div>
+          <div class="prog-head"><span>Build progress</span><b>Foundations</b></div>
+          <div class="prog-bar"><i style="width:15%"></i></div>
           <ul class="prog-list">
-            <li class="done">Dig site seeded and first excavation run, 8 artifacts retrieved</li>
-            <li class="done">Flow XML read by hand: status, trigger type, and field updates located</li>
-            <li class="now">Structured Flow summaries via schema-forced model output</li>
-            <li>Dependency graph and the first dead-automation detector</li>
-            <li>Hybrid retrieval, eval suite, agent loop, Well-Architected report</li>
+            <li class="done">Metadata retrieval pipeline against a live Developer Edition org</li>
+            <li class="done">Test org seeded with deliberate tech debt: dead Flows, a trigger and Flow competing for one field, unused fields, an over-permissioned permission set</li>
+            <li>Parser and dependency graph, then the first deterministic detectors</li>
+            <li>Hybrid retrieval, golden-dataset eval gate, agent loop, Well-Architected report</li>
           </ul>
         </div>
       </div>
