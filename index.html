@@ -131,6 +131,8 @@
   .job li{position:relative;padding:5px 0 5px 20px;color:var(--ink-2);font-size:.96rem}
   .job li::before{content:"";position:absolute;left:0;top:14px;width:9px;height:1px;background:var(--brass)}
   .job li b{color:var(--ink);font-weight:600}
+  .job .tools{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule);font-size:.86rem;color:var(--ink-2);line-height:1.6}
+  .job .tools span{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#a87a24;font-weight:500;margin-right:8px}
   @media(max-width:860px){.job{grid-template-columns:1fr;gap:8px}}
 
   /* Featured project */
@@ -255,45 +257,59 @@
   <div class="page row">
     <div class="rail"><span class="num">02</span><span class="lbl">Experience</span></div>
     <div class="xp">
+
       <div class="job rv">
         <div class="when"><b>2023 to Now</b>Aug 2023 – Present</div>
         <div>
           <h3>Senior Business Analyst</h3>
           <div class="co">HotelKey Inc. · Carrollton, TX · promoted from Business Analyst · solution-architecture scope across CRS, Salesforce, and AWS</div>
           <ul>
-            <li>Primary analytical liaison for <b>9+ enterprise hotel brands</b> (Hilton, IHG) on a platform serving 4,000+ properties, covering discovery, data mapping, user stories, and functional specs. Implementation effort down <b>30%</b> post-go-live.</li>
-            <li>Architected a Salesforce Sales &amp; Support platform on Einstein AI and automated Flows, delivering <b>+20% lead conversion</b> with First Contact Resolution held above 70%.</li>
-            <li>Integration testing and release-readiness across <b>10+ mission-critical CRS APIs</b> with Postman collections and Swagger/OpenAPI specs, resulting in <b>30% fewer API support tickets</b>.</li>
-            <li>Supported delivery of enterprise reservation data products on <b>AWS (Kinesis, Glue, Athena)</b>, validating near-real-time booking data with Athena and SQL; contributed to performance validation of a DynamoDB Accelerator (DAX) rollout against enterprise SLAs.</li>
-            <li>SQL audits of reservation and booking data to resolve client-reported discrepancies; UAT and partner certification cycles against CRS sandbox environments.</li>
-            <li>Tracked integration SLAs (uptime, latency, error rates) and drove root-cause resolution; GenAI reporting cut program review cycles <b>20%</b>.</li>
+            <li>Primary analytical liaison and client-facing point of contact for <b>9+ enterprise hotel brands</b> (Hilton, IHG, BWH Hotels) on a hospitality SaaS platform serving 4,000+ properties, leading discovery sessions, managing stakeholder expectations, and owning the requirements lifecycle end to end.</li>
+            <li>Translated client and business-stakeholder requirements into <b>user stories, acceptance criteria, and functional specifications</b>, documenting data-mapping rules and end-to-end business process flows including operational edge cases and system dependencies. Implementation effort down <b>30%</b> per brand post go-live.</li>
+            <li>Architected a Salesforce Sales &amp; Support platform using <b>Einstein AI, automated Flows, Apex, and Lightning Web Components</b>, with brand modeled as a data dimension so onboarding a new brand became configuration rather than a project. Delivered <b>+20% lead conversion</b> with First Contact Resolution (FCR) sustained above 70%.</li>
+            <li>Performed <b>integration testing and release-readiness validation across 10+ mission-critical CRS APIs</b>, building and executing Postman collections against Swagger/OpenAPI specifications, inspecting request and response payloads, and verifying system-to-system communication. Reduced API-related support tickets <b>30%</b>.</li>
+            <li>Defined <b>User Acceptance Testing (UAT) criteria</b> and executed <b>partner certification and regression cycles</b> against CRS sandbox and staging environments, guiding enterprise clients through validation and documenting pass/fail results for sign-off.</li>
+            <li>Wrote <b>SQL queries and joins to audit reservation and booking data</b> across database tables, verifying payload accuracy and data integrity, investigating client-reported integration issues and data discrepancies, identifying root causes, and routing them to engineering.</li>
+            <li>Supported delivery of enterprise reservation data products on <b>AWS (Kinesis, Glue, Athena)</b> for near-real-time booking visibility, and contributed to performance validation of a <b>DynamoDB Accelerator (DAX)</b> rollout against contractual latency SLAs.</li>
+            <li>Monitored <b>integration SLAs</b> for uptime, response time, and error rates, escalating breaches with root cause narrowed down; partnered with Product Managers and engineering leads on <b>backlog prioritization and sprint planning</b> in an Agile/Scrum environment. GenAI-assisted reporting cut program review cycles <b>20%</b>.</li>
           </ul>
+          <p class="tools"><span>Tools</span> Salesforce (Sales &amp; Service Cloud, Apex, LWC, Flows, Einstein) · Postman · Swagger/OpenAPI · SQL · AWS Kinesis, Glue, Athena, DynamoDB · Jira · Confluence · Agile/Scrum</p>
         </div>
       </div>
+
       <div class="job rv">
         <div class="when"><b>2023</b>Jan – May 2023</div>
         <div>
           <h3>Financial Business Analyst</h3>
           <div class="co">CG Infinity · Plano, TX</div>
           <ul>
-            <li>GenAI-augmented market insights with Python, Alteryx, and LLM summarization, driving <b>+8% profit</b> and two strategic initiatives launched.</li>
-            <li>AI-assisted forecasting in Power BI on Snowflake, cutting manual analysis time <b>35%</b> and surfacing executive insights 2× faster.</li>
-            <li>Snowflake pipelines with automated data-quality checks for <b>+30% query performance</b>; predictive risk models cut exposure <b>10%</b>.</li>
+            <li>Delivered <b>GenAI-augmented market insights and financial trend analysis</b> using Python, Alteryx, and LLM-assisted summarization for banking and financial-services stakeholders, driving an <b>8% profit increase</b> and launching two strategic initiatives.</li>
+            <li>Built <b>AI-assisted forecasting models in Power BI</b> on Snowflake with advanced DAX measures and Power Query transformations, reducing manual analysis time <b>35%</b> and surfacing executive insights <b>2× faster</b>.</li>
+            <li>Engineered optimized <b>Snowflake data pipelines with automated data-quality checks</b>, improving query performance and retrieval speed <b>30%</b> and enabling real-time financial reporting.</li>
+            <li>Developed <b>predictive financial risk models</b> using Python regression and scenario analysis, contributing to a <b>10% reduction in risk exposure</b> and supporting evidence-based executive decision-making.</li>
+            <li>Gathered requirements from business stakeholders and translated them into <b>data models, KPI definitions, and dashboard specifications</b> reviewed and signed off before build.</li>
           </ul>
+          <p class="tools"><span>Tools</span> Python · SQL · Snowflake · Power BI (DAX, Power Query) · Alteryx · Excel · LLM summarization</p>
         </div>
       </div>
+
       <div class="job rv">
         <div class="when"><b>2019 to 2021</b>Sep 2019 – Dec 2021</div>
         <div>
           <h3>Systems Engineer · Salesforce Business Analyst</h3>
-          <div class="co">Infosys Limited · Bangalore, India · client: Daimler AG</div>
+          <div class="co">Infosys Limited · Bangalore, India · client: Daimler AG (Mercedes-Benz)</div>
           <ul>
-            <li>Led Salesforce re-architecture for <b>Daimler AG (Mercedes-Benz)</b> with Apex and LWC, reducing manual entry 20% and improving data accuracy 15%.</li>
-            <li>Established CI/CD with GitHub Actions, Bitbucket, and Jenkins, achieving <b>95% defect-free deployments</b> with post-release issues down 30%.</li>
-            <li>Led full-cycle UAT, onboarding, and hypercare to <b>90% CSAT</b> with resolution time cut 40%; executive dashboards tied to a <b>23% revenue increase</b>.</li>
+            <li>Led <b>Salesforce re-architecture for Daimler AG (Mercedes-Benz)</b> using Apex and Lightning Web Components (LWC) across the European automotive retail and wholesale programme, reducing manual data entry <b>20%</b> and improving data accuracy <b>15%</b>.</li>
+            <li>Built scalable <b>LWC components and declarative Flows aligned to the Salesforce Well-Architected Framework</b>, eliminating data duplication <b>25%</b> and accelerating cross-team workflows.</li>
+            <li>Established <b>CI/CD pipelines with GitHub Actions, Bitbucket, and Jenkins</b> including automated test coverage, achieving <b>95% defect-free deployments</b> and reducing post-release issues <b>30%</b>.</li>
+            <li>Led <b>full-cycle User Acceptance Testing (UAT), onboarding, and hypercare support</b> across five cross-functional sub-teams, achieving <b>90% CSAT</b> and cutting average issue resolution time <b>40%</b> through a structured knowledge base and triage workflow.</li>
+            <li>Supported <b>data migration and sandbox-to-production release management</b>, resolving complex migration requirements between developer, testing, and staging environments.</li>
+            <li>Designed real-time <b>Salesforce and Tableau dashboards</b> surfacing KPIs to senior leadership, directly contributing to a <b>23% increase in Sales &amp; Marketing revenue</b>.</li>
           </ul>
+          <p class="tools"><span>Tools</span> Salesforce (Apex, LWC, Flows, Process Builder) · GitHub Actions · Bitbucket · Jenkins · Tableau · Jira · Confluence · Agile/Scrum</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
