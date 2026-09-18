@@ -160,15 +160,18 @@
   .prog-list li.now{color:var(--ink);font-weight:500}
   .prog-list li.now::before{background:var(--brass);border-color:var(--brass);box-shadow:0 0 0 3px rgba(217,164,65,.22)}
 
-  /* Next in queue */
-  .next-up{margin-top:30px;border-top:1px solid var(--rule);padding-top:24px}
-  .next-up h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#a87a24;font-weight:500;margin-bottom:14px}
-  .next-up ul{list-style:none;display:grid;gap:12px;max-width:66ch}
-  .next-up li{display:grid;grid-template-columns:190px 1fr;gap:18px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--rule)}
-  .next-up li b{font-family:var(--serif);font-weight:500;font-size:1.08rem;color:var(--ink)}
-  .next-up li span{font-size:.93rem;color:var(--ink-2)}
-  .next-note{margin-top:14px;font-size:.88rem;color:var(--ink-3);font-style:italic}
-  @media(max-width:700px){.next-up li{grid-template-columns:1fr;gap:4px}}
+  /* Shipped projects */
+  .shipped{margin-top:32px;border-top:1px solid var(--rule);padding-top:26px}
+  .shipped h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#a87a24;font-weight:500;margin-bottom:16px}
+  .ship-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ship{display:block;text-decoration:none;color:inherit;border:1px solid var(--rule);background:#fffdf8;border-radius:6px;padding:22px 20px 18px;transition:border-color .2s,transform .2s}
+  .ship:hover{border-color:var(--green);transform:translateY(-2px)}
+  .ship-cat{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#8b7355;display:block;margin-bottom:10px}
+  .ship h3{font-family:var(--serif);font-weight:500;font-size:1.18rem;color:var(--ink);margin-bottom:9px}
+  .ship p{font-size:.92rem;color:var(--ink-2);margin-bottom:14px}
+  .ship-meta{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);display:block;margin-bottom:12px;line-height:1.5}
+  .ship-link{font-size:.8rem;font-weight:600;color:var(--green);letter-spacing:.02em}
+  @media(max-width:860px){.ship-grid{grid-template-columns:1fr}}
 
   /* Capabilities matrix */
   .matrix{border-top:2px solid var(--ink)}
@@ -417,14 +420,35 @@
         </div>
       </div>
 
-      <div class="next-up rv">
-        <h4>Next in the queue</h4>
-        <ul>
-          <li><b>FlowLint</b><span>A static analyzer for Flow XML that flags missing fault paths, hardcoded IDs, and two automations fighting over the same field.</span></li>
-          <li><b>CRS Certification Harness</b><span>Partner certification cycles as a versioned Postman collection, run by Newman, with the sign-off document generated from the results.</span></li>
-          <li><b>SLA Sentinel</b><span>Uptime, latency, and error-rate monitoring for REST integrations, with breach alerts against contractual thresholds.</span></li>
-        </ul>
-        <p class="next-note">These get a link here the day they ship, not before.</p>
+      <div class="shipped rv">
+        <h4>Also shipped</h4>
+        <div class="ship-grid">
+
+          <a class="ship" href="https://github.com/PakshalShah30/flowlint" target="_blank" rel="noopener">
+            <span class="ship-cat">Salesforce · developer tooling</span>
+            <h3>FlowLint</h3>
+            <p>Static analysis for Salesforce Flow metadata: five rules that catch missing fault paths, hardcoded record IDs, recursion risk, dead automation, and two Flows fighting over the same field. Exits non-zero so it can gate a pull request.</p>
+            <span class="ship-meta">Python · ElementTree · pytest · GitHub Actions</span>
+            <span class="ship-link">View repository ↗</span>
+          </a>
+
+          <a class="ship" href="https://github.com/PakshalShah30/crs-certification-harness" target="_blank" rel="noopener">
+            <span class="ship-cat">APIs · integration testing</span>
+            <h3>CRS Certification Harness</h3>
+            <p>Partner certification for reservation APIs as one command: a mock CRS with deliberately planted defects, an OpenAPI contract, a Postman collection run by Newman, and an audit-ready pass/fail sign-off document generated from the results.</p>
+            <span class="ship-meta">FastAPI · Postman/Newman · OpenAPI · pytest</span>
+            <span class="ship-link">View repository ↗</span>
+          </a>
+
+          <a class="ship" href="https://github.com/PakshalShah30/sla-sentinel" target="_blank" rel="noopener">
+            <span class="ship-cat">Observability · SLA management</span>
+            <h3>SLA Sentinel</h3>
+            <p>Integration SLA monitoring as a system instead of a spreadsheet: scheduled probes into SQLite, rolling uptime and p95 latency against contractual thresholds, breach alerts with a cooldown, and a dashboard that shows which integration is failing and by how much.</p>
+            <span class="ship-meta">FastAPI · SQLite · Chart.js · pytest</span>
+            <span class="ship-link">View repository ↗</span>
+          </a>
+
+        </div>
       </div>
     </div>
   </div>
